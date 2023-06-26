@@ -1,3 +1,6 @@
+export * from './Accordion';
+export * from './AccordionDetails';
+export * from './AccordionSummary';
 export * from './Alert';
 export * from './Box';
 export * from './Button';
