@@ -1,0 +1,12 @@
+{
+  "name": "react-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "core:storybook": "pnpm --filter core storybook"
+  },
+  "keywords": [],
+  "author": "Mauricio Rivera",
+  "license": "ISC"
+}
