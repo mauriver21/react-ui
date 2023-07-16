@@ -18,5 +18,6 @@ export * from './Image';
 export * from './Skeleton';
 export * from './SkeletonLoader';
 export * from './Stack';
+export * from './TextField';
 export * from './ThemeProvider';
 export * from './Typography';

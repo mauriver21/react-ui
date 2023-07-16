@@ -2,6 +2,35 @@ import { ThemeOptions } from '@mui/material/styles';
 import './index.css';
 
 export const theme: ThemeOptions = {
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& label.Mui-focused': {
+            get color() {
+              return theme.palette?.text?.secondary;
+            },
+          },
+          '& .MuiOutlinedInput-notchedOutline': {
+            borderWidth: '2px',
+          },
+          '& .MuiOutlinedInput-root': {
+            borderRadius: 18,
+            '&.Mui-focused fieldset': {
+              get borderColor() {
+                return theme.palette?.text?.secondary;
+              },
+            },
+            '&:hover fieldset': {
+              get borderColor() {
+                return theme.palette?.text?.secondary;
+              },
+            },
+          },
+        },
+      },
+    },
+  },
   palette: {
     mode: 'dark',
     primary: {
