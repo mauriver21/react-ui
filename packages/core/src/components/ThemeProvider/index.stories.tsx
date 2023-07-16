@@ -35,24 +35,6 @@ const PaletteItem = (props: {
   </Box>
 );
 
-const Palette = (props: { name: string }) => {
-  const palettes = [100, 200, 300, 400, 500, 600, 700];
-
-  return (
-    <Stack spacing={2} direction="row">
-      {palettes.map((item) => (
-        <PaletteItem
-          borderColor="primary.light"
-          width={140}
-          height={100}
-          border={1}
-          bgcolor={`${props.name}.${item}`}
-        />
-      ))}
-    </Stack>
-  );
-};
-
 export const Overview: Story = {
   render: () => {
     return (
@@ -63,9 +45,6 @@ export const Overview: Story = {
             <Button variant="contained" color="primary">
               Primary
             </Button>
-            <Button variant="contained" color="secondary">
-              Secondary
-            </Button>
           </Stack>
         </Stack>
         <Stack spacing={2}>
@@ -74,11 +53,6 @@ export const Overview: Story = {
             <PaletteItem bgcolor="primary.light" />
             <PaletteItem bgcolor="primary.main" />
             <PaletteItem bgcolor="primary.dark" />
-          </Stack>
-          <Stack direction="row" spacing={2}>
-            <PaletteItem bgcolor="secondary.light" />
-            <PaletteItem bgcolor="secondary.main" />
-            <PaletteItem bgcolor="secondary.dark" />
           </Stack>
           <Stack direction="row" spacing={2}>
             <PaletteItem bgcolor="success.light" />
@@ -91,17 +65,12 @@ export const Overview: Story = {
             <PaletteItem bgcolor="error.dark" />
           </Stack>
           <Stack direction="row" spacing={2}>
-            <PaletteItem bgcolor="danger.light" />
-            <PaletteItem bgcolor="danger.main" />
-            <PaletteItem bgcolor="danger.dark" />
-          </Stack>
-          <Stack direction="row" spacing={2}>
             <PaletteItem bgcolor="info.light" />
             <PaletteItem bgcolor="info.main" />
             <PaletteItem bgcolor="info.dark" />
           </Stack>
           <Stack direction="row" spacing={2}>
-            <PaletteItem bgcolor="text.primary" color="secondary.dark" />
+            <PaletteItem bgcolor="text.primary" color="primary.dark" />
             <PaletteItem bgcolor="text.secondary" />
           </Stack>
           <Stack direction="row" spacing={2}>
@@ -116,7 +85,6 @@ export const Overview: Story = {
               borderColor={'primary.light'}
             />
           </Stack>
-          <Palette name="primary" />
         </Stack>
       </Stack>
     );
