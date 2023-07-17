@@ -1,13 +1,28 @@
 {
   "name": "@reactjs-ui/form-fields",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": {
+    "name": "Mauricio Rivera"
+  },
+  "source": "./src/index.ts",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/es/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/es/index.js"
+    }
+  },
   "scripts": {
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "local-publish-package": "npm publish --registry http://localhost:4873",
-    "local-unpublish-package": "npm unpublish @reactjs-ui/core@0.0.0 --registry http://localhost:4873 --force",
+    "local-unpublish-package": "npm unpublish @reactjs-ui/form-fields@0.0.0 --registry http://localhost:4873 --force",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test-storybook": "test-storybook --coverage",
@@ -53,6 +68,8 @@
     "eslint-plugin-storybook": "^0.6.12",
     "jest": "^29.6.1",
     "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "storybook": "^7.0.27",
     "ts-jest": "^29.1.1",
     "typescript": "^5.0.2",

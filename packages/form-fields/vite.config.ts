@@ -17,7 +17,6 @@ export default defineConfig({
     tsconfigPaths(),
     dts({ include: 'src', exclude: 'src/**/*.stories.@(js|jsx|ts|tsx)' }),
   ],
-
   build: {
     lib: {
       entry: 'src/index.ts',
