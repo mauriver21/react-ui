@@ -8,8 +8,10 @@ import {
   AccordionDetails,
   Typography,
   AccordionDetailsProps,
+  Icon,
 } from '@components';
 import { useEffect, useRef, useState } from 'react';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export interface AccordionProps extends Omit<MuiAccordionProps, 'onClick'> {
   label?: string | React.ReactNode;
@@ -31,6 +33,7 @@ export const Accordion: React.FC<AccordionProps> = ({
   summary,
   details,
   onClick: onClickProp,
+  expandIcon = <Icon render={ExpandMoreIcon} />,
   TransitionProps,
   ...rest
 }) => {
@@ -73,7 +76,7 @@ export const Accordion: React.FC<AccordionProps> = ({
       }}
       {...rest}
     >
-      <AccordionSummary {...summary}>
+      <AccordionSummary expandIcon={expandIcon} {...summary}>
         {labelElement || (
           <Typography
             display="flex"

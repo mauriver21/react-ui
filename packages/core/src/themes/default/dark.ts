@@ -1,4 +1,4 @@
-import { ThemeOptions } from '@mui/material/styles';
+import { PaletteColor, ThemeOptions } from '@mui/material/styles';
 import './index.css';
 
 export const theme: ThemeOptions = {
@@ -6,24 +6,24 @@ export const theme: ThemeOptions = {
     MuiTextField: {
       styleOverrides: {
         root: {
-          '& label.Mui-focused': {
-            get color() {
-              return theme.palette?.text?.secondary;
-            },
-          },
           '& .MuiOutlinedInput-notchedOutline': {
             borderWidth: '2px',
           },
           '& .MuiOutlinedInput-root': {
             borderRadius: 18,
+            '& fieldset': {
+              get borderColor() {
+                return (theme.palette?.primary as PaletteColor).main;
+              },
+            },
             '&.Mui-focused fieldset': {
               get borderColor() {
-                return theme.palette?.text?.secondary;
+                return (theme.palette?.primary as PaletteColor).light;
               },
             },
             '&:hover fieldset': {
               get borderColor() {
-                return theme.palette?.text?.secondary;
+                return (theme.palette?.primary as PaletteColor).light;
               },
             },
           },
@@ -34,9 +34,9 @@ export const theme: ThemeOptions = {
   palette: {
     mode: 'dark',
     primary: {
-      main: '#222433',
-      light: '#2B2C3E',
-      dark: '#1E1D2B',
+      main: '#8688AE',
+      light: '#b6b9e6',
+      dark: '#585976',
     },
     success: {
       main: '#6AC692',

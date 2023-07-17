@@ -1,12 +1,24 @@
 {
-  "name": "core",
-  "private": true,
+  "name": "@reactjs-ui/core",
   "version": "0.0.0",
   "type": "module",
+  "author": {
+    "name": "Mauricio Rivera"
+  },
+  "source": "./src/index.ts",
+  "types": "./dist/index.d.ts",
+  "module": "./dist/cjs/index.js",
+  "main": "./dist/es/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "local-publish-package": "npm publish --registry http://localhost:4873",
+    "local-unpublish-package": "npm unpublish @reactjs-ui/core@0.0.0 --registry http://localhost:4873 --force",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -14,11 +26,13 @@
   "peerDependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.0",
     "@mui/material": "^5.13.6"
   },
   "devDependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.0",
     "@mui/material": "^5.13.6",
     "@storybook/addon-essentials": "^7.0.23",
     "@storybook/addon-interactions": "^7.0.23",
@@ -42,6 +56,7 @@
     "storybook": "^7.0.23",
     "typescript": "^5.0.2",
     "vite": "^4.3.9",
+    "vite-plugin-dts": "^3.3.0",
     "vite-tsconfig-paths": "^4.2.0"
   }
 }

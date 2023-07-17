@@ -1,10 +1,13 @@
 {
-  "name": "react-ui",
+  "name": "reactjs-ui",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "core:storybook": "pnpm --filter core storybook"
+    "core:storybook": "pnpm --filter core storybook",
+    "core:build": "pnpm --filter core build",
+    "core:local-publish-package": "pnpm --filter core local-publish-package",
+    "core:local-unpublish-package": "pnpm --filter core local-unpublish-package"
   },
   "keywords": [],
   "author": "Mauricio Rivera",

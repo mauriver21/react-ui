@@ -18,6 +18,12 @@ export const Overview: Story = {
           malesuada lacus ex, sit amet blandit leo lobortis eget.
         </Typography>
       </Accordion>
+      <Accordion label="Accordion 2">
+        <Typography>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          malesuada lacus ex, sit amet blandit leo lobortis eget.
+        </Typography>
+      </Accordion>
     </Stack>
   ),
 };
