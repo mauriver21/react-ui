@@ -20,6 +20,7 @@ export * from './Image';
 export * from './Skeleton';
 export * from './SkeletonLoader';
 export * from './Stack';
+export * from './Style';
 export * from './Switch';
 export * from './TextField';
 export * from './ThemeProvider';

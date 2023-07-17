@@ -22,7 +22,7 @@
       "@hocs": ["src/hocs"],
       "@interfaces": ["src/interfaces"],
       "@utils": ["src/utils"],
-      "@themes": ["src/themes/configs"]
+      "@themes": ["src/themes"]
     }
   },
   "references": [{ "path": "./tsconfig.node.json" }]
