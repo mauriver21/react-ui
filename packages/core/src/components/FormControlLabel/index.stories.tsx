@@ -1,0 +1,15 @@
+import { Meta, StoryObj } from '@storybook/react';
+import { FormControlLabel } from '@components';
+
+const meta: Meta = {
+  title: 'Forms/FormControlLabel',
+  component: FormControlLabel,
+};
+
+export default meta;
+
+type Story = StoryObj<typeof FormControlLabel>;
+
+export const Overview: Story = {
+  args: { control: <>Control</>, disabled: false },
+};
