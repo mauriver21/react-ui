@@ -1,5 +1,5 @@
 import { Field } from '@interfaces';
-import { FieldComponentProps } from '@components';
+import { FieldComponentProps } from '@lib';
 import {
   Dispatch,
   SetStateAction,
@@ -10,7 +10,11 @@ import {
   useRef,
   useState,
 } from 'react';
-import { FieldValues, UseControllerReturn, useController } from 'react-hook-form';
+import {
+  FieldValues,
+  UseControllerReturn,
+  useController,
+} from 'react-hook-form';
 import { debounce } from '@utils';
 
 type FieldRef = { isSubmitting: boolean; value?: any; multiple: boolean };
@@ -34,7 +38,9 @@ const FieldContext = createContext<{
 }>({} as any);
 export const useFieldContext = () => useContext(FieldContext);
 
-export const withFieldProvider = <T extends FieldComponentProps>(BaseComponent: React.FC<T>) => {
+export const withFieldProvider = <T extends FieldComponentProps>(
+  BaseComponent: React.FC<T>
+) => {
   return (props: T) => {
     const ref = useRef<FieldRef>({ ...defaultRef });
     const controller =
@@ -59,7 +65,11 @@ export const withFieldProvider = <T extends FieldComponentProps>(BaseComponent: 
      * Field props and helpers initialization
      */
     const [field, setField] = useState<Field>({
-      props: { id: props.id, name: props.name, value: handleValue(props.value) },
+      props: {
+        id: props.id,
+        name: props.name,
+        value: handleValue(props.value),
+      },
       helpers: {
         error: props.error || false,
         errorMessage: props.errorMessage || '',
@@ -120,7 +130,10 @@ export const withFieldProvider = <T extends FieldComponentProps>(BaseComponent: 
      * Util function for setting a field helper.
      */
     const setFieldHelpers = (helpers: Partial<Field['helpers']>) => {
-      setField((prev) => ({ ...prev, helpers: { ...prev.helpers, ...helpers } }));
+      setField((prev) => ({
+        ...prev,
+        helpers: { ...prev.helpers, ...helpers },
+      }));
     };
 
     /**
@@ -146,7 +159,9 @@ export const withFieldProvider = <T extends FieldComponentProps>(BaseComponent: 
         field: field as T,
         setField: setField as Dispatch<SetStateAction<T>>,
         setFieldProps: setFieldProps as (props: Partial<T['props']>) => void,
-        setFieldHelpers: setFieldHelpers as (helpers: Partial<T['helpers']>) => void,
+        setFieldHelpers: setFieldHelpers as (
+          helpers: Partial<T['helpers']>
+        ) => void,
       };
     };
 
@@ -173,7 +188,10 @@ export const withFieldProvider = <T extends FieldComponentProps>(BaseComponent: 
      */
     useEffect(() => {
       setFieldHelpers({
-        error: Boolean(controller?.fieldState?.error?.message) || props?.error || false,
+        error:
+          Boolean(controller?.fieldState?.error?.message) ||
+          props?.error ||
+          false,
       });
     }, [controller?.fieldState?.error?.message, props?.error]);
 
@@ -182,7 +200,8 @@ export const withFieldProvider = <T extends FieldComponentProps>(BaseComponent: 
      */
     useEffect(() => {
       setFieldHelpers({
-        errorMessage: controller?.fieldState?.error?.message || props?.errorMessage || '',
+        errorMessage:
+          controller?.fieldState?.error?.message || props?.errorMessage || '',
       });
     }, [controller?.fieldState?.error?.message, props?.errorMessage]);
 

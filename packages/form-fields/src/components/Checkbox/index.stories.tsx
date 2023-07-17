@@ -1,10 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Button, Checkbox, Stack } from '@components';
-import { sleep, useForm } from '@utils';
 import { fireEvent, userEvent, within } from '@storybook/testing-library';
+import { Button, Stack } from '@reactjs-ui/core';
+import { Checkbox, schema, Schema, useForm } from '@reactjs-ui/form-fields';
+import { sleep } from '@utils';
 import { expect } from '@storybook/jest';
-import { Schema } from 'yup';
-import * as yup from 'yup';
 
 const meta: Meta = {
   title: 'Forms/Checkbox',
@@ -25,7 +24,9 @@ export const Overview: Story = {
 
 type Schema1 = { active: boolean };
 
-const schema1: Schema<Schema1> = yup.object({ active: yup.boolean().required().oneOf([true]) });
+const schema1: Schema<Schema1> = schema.object({
+  active: schema.boolean().required().oneOf([true]),
+});
 
 export const InputValidation: Story = {
   name: 'Validated on input',
@@ -50,14 +51,18 @@ export const InputValidation: Story = {
 
     await sleep(200);
 
-    let errorMessage: HTMLElement | null = await canvas.findByText('active is a required field');
+    let errorMessage: HTMLElement | null = await canvas.findByText(
+      'active is a required field'
+    );
     expect(errorMessage).toBeDefined();
     userEvent.click(field);
     userEvent.click(field);
 
     await sleep(200);
 
-    errorMessage = canvas.queryByText('active must be one of the following values: true');
+    errorMessage = canvas.queryByText(
+      'active must be one of the following values: true'
+    );
     expect(errorMessage).toBeDefined();
 
     await sleep(400);
@@ -66,16 +71,18 @@ export const InputValidation: Story = {
 
     await sleep(400);
 
-    errorMessage = canvas.queryByText('active must be one of the following values: true');
+    errorMessage = canvas.queryByText(
+      'active must be one of the following values: true'
+    );
     expect(errorMessage).toBe(null);
   },
 };
 
 type Schema2 = { active: boolean; status: 'subscribed' | 'unsubscribed' };
 
-const schema2: Schema<Schema2> = yup.object({
-  active: yup.boolean().required().oneOf([true]),
-  status: yup
+const schema2: Schema<Schema2> = schema.object({
+  active: schema.boolean().required().oneOf([true]),
+  status: schema
     .mixed<Schema2['status']>()
     .required()
     .oneOf(['subscribed', 'unsubscribed'])
@@ -122,7 +129,9 @@ export const Fill: Story = {
           </Stack>
         </form>
         <pre>
-          <code id="active-field-value">{JSON.stringify(form.watch('active'))}</code>
+          <code id="active-field-value">
+            {JSON.stringify(form.watch('active'))}
+          </code>
           <code id="status-field-value">{form.watch('status')}</code>
         </pre>
       </>
@@ -130,16 +139,20 @@ export const Fill: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const formValues = canvasElement.querySelector<HTMLDivElement>('#form-values')!;
-
     await sleep(200);
 
     const submitBtn = await canvas.findByText<HTMLButtonElement>('Submit');
     const fillBtn = await canvas.findByText('Fill');
-    const activeField = canvasElement.querySelector<HTMLInputElement>('[name="active"]')!;
-    const subscribedField = canvasElement.querySelector<HTMLInputElement>('[name="status"]')!;
-    const activeFieldValue = canvasElement.querySelector<HTMLDivElement>('#active-field-value')!;
-    const statusFieldValue = canvasElement.querySelector<HTMLDivElement>('#status-field-value')!;
+    const activeField =
+      canvasElement.querySelector<HTMLInputElement>('[name="active"]')!;
+    const subscribedField =
+      canvasElement.querySelector<HTMLInputElement>('[name="status"]')!;
+    const activeFieldValue = canvasElement.querySelector<HTMLDivElement>(
+      '#active-field-value'
+    )!;
+    const statusFieldValue = canvasElement.querySelector<HTMLDivElement>(
+      '#status-field-value'
+    )!;
     userEvent.click(fillBtn);
 
     await sleep(200);

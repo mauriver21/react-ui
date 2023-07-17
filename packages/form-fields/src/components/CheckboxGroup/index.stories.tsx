@@ -1,10 +1,14 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Button, CheckboxGroup, Stack } from '@components';
-import { sleep, useForm } from '@utils';
+import { Button, Stack } from '@reactjs-ui/core';
+import {
+  CheckboxGroup,
+  schema,
+  Schema,
+  useForm,
+} from '@reactjs-ui/form-fields';
+import { sleep } from '@utils';
 import { fireEvent, userEvent, within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
-import { Schema } from 'yup';
-import * as yup from 'yup';
 
 const meta: Meta = {
   title: 'Forms/CheckboxGroup',
@@ -39,9 +43,9 @@ export const Overview: Story = {
 
 type Schema1 = { favoriteFoods: number[] };
 
-const schema1: Schema<Schema1> = yup.object({
-  favoriteFoods: yup
-    .array(yup.number().required())
+const schema1: Schema<Schema1> = schema.object({
+  favoriteFoods: schema
+    .array(schema.number().required())
     .min(2, 'You must select at least 2 items')
     .required(),
 });
@@ -132,14 +136,17 @@ export const Fill: Story = {
           </Stack>
         </form>
         <pre>
-          <code id="field-value">{JSON.stringify(form.watch('favoriteFoods'))}</code>
+          <code id="field-value">
+            {JSON.stringify(form.watch('favoriteFoods'))}
+          </code>
         </pre>
       </>
     );
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const fieldValue = canvasElement.querySelector<HTMLDivElement>('#field-value')!;
+    const fieldValue =
+      canvasElement.querySelector<HTMLDivElement>('#field-value')!;
 
     await sleep(200);
 

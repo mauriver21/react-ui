@@ -1,31 +1,10 @@
-import { TextField as MuiTextField, TextFieldProps as MuiTextFieldProps } from '@mui/material';
-import { Box, Field, FormHelperText } from '@components';
-import { FieldProps } from '@interfaces';
+import {
+  TextField as MuiTextField,
+  TextFieldProps as MuiTextFieldProps,
+} from '@mui/material';
 
-export type TextFieldProps = MuiTextFieldProps & FieldProps & {};
+export type TextFieldProps = MuiTextFieldProps & {};
 
-export const TextField: React.FC<TextFieldProps> = ({
-  fullWidth = true,
-  helperText,
-  control,
-  fieldOptions,
-  ...rest
-}) => {
-  return (
-    <Field
-      as="input"
-      fieldOptions={fieldOptions}
-      control={control}
-      {...rest}
-      render={({ props, helpers }) => (
-        <Box>
-          <MuiTextField fullWidth {...rest} {...props} error={helpers.error} />
-          {helperText && <FormHelperText disabled={rest.disabled}>{helperText}</FormHelperText>}
-          {helpers.errorMessage && (
-            <FormHelperText error={helpers.error}>{helpers.errorMessage}</FormHelperText>
-          )}
-        </Box>
-      )}
-    />
-  );
-};
+export const TextField: React.FC<TextFieldProps> = (props) => (
+  <MuiTextField {...props} />
+);

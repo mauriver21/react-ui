@@ -1,10 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Button, Select, Stack } from '@components';
-import { sleep, useForm } from '@utils';
+import { Button, Stack } from '@reactjs-ui/core';
+import { schema, Schema, Select, useForm } from '@reactjs-ui/form-fields';
+import { sleep } from '@utils';
 import { fireEvent, userEvent, within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
-import { Schema } from 'yup';
-import * as yup from 'yup';
 
 const meta: Meta = {
   title: 'Forms/Select',
@@ -39,8 +38,11 @@ export const SingleSelectOverview: Story = {
 
 type Schema1 = { favoriteFood: number };
 
-const schema1: Schema<Schema1> = yup.object({
-  favoriteFood: yup.number().required().min(1, 'favoriteFood is a required field'),
+const schema1: Schema<Schema1> = schema.object({
+  favoriteFood: schema
+    .number()
+    .required()
+    .min(1, 'favoriteFood is a required field'),
 });
 
 export const SingleSelectChangeValidation: Story = {
@@ -93,7 +95,7 @@ export const SingleSelectFill: Story = {
   render: () => {
     const form = useForm(schema1);
 
-    const submit = (data: Schema1) => {
+    const submit = () => {
       form.reset();
     };
 
@@ -128,7 +130,8 @@ export const SingleSelectFill: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const fieldValue = canvasElement.querySelector<HTMLDivElement>('#field-value')!;
+    const fieldValue =
+      canvasElement.querySelector<HTMLDivElement>('#field-value')!;
 
     await sleep(200);
 
@@ -157,9 +160,9 @@ export const SingleSelectFill: Story = {
 
 type Schema2 = { favoriteFoods: number[] };
 
-const schema2: Schema<Schema2> = yup.object({
-  favoriteFoods: yup
-    .array(yup.number().required())
+const schema2: Schema<Schema2> = schema.object({
+  favoriteFoods: schema
+    .array(schema.number().required())
     .min(2, 'You must select at least 2 items')
     .required(),
 });
@@ -266,14 +269,17 @@ export const MultipleSelectFill: Story = {
           </Stack>
         </form>
         <pre>
-          <code id="field-value">{JSON.stringify(form.watch('favoriteFoods'))}</code>
+          <code id="field-value">
+            {JSON.stringify(form.watch('favoriteFoods'))}
+          </code>
         </pre>
       </>
     );
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const fieldValue = canvasElement.querySelector<HTMLDivElement>('#field-value')!;
+    const fieldValue =
+      canvasElement.querySelector<HTMLDivElement>('#field-value')!;
 
     await sleep(200);
 

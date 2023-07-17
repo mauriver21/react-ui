@@ -6,15 +6,22 @@ import {
   useForm as useReactHookForm,
   UseFormReset,
   FieldValues,
+  UseFormReturn,
 } from 'react-hook-form';
-import { UseFormReturn } from 'react-hook-form';
 
 type Options = Omit<Parameters<typeof useReactHookForm>, 'resolver'>[0];
 type ResetOptions = Parameters<UseFormReset<any>>[1];
-type HandleSubmit<T extends FieldValues = FieldValues> = UseFormReturn<T>['handleSubmit'];
+type HandleSubmit<T extends FieldValues = FieldValues> =
+  UseFormReturn<T>['handleSubmit'];
 
-export const useForm = <T extends FieldValues>(schema: AnySchema<T>, options?: Options) => {
-  const defaultValues = useMemo(() => schema.getDefault(), []) as DeepPartial<T>;
+export const useForm = <T extends FieldValues>(
+  schema: AnySchema<T>,
+  options?: Options
+) => {
+  const defaultValues = useMemo(
+    () => schema.getDefault(),
+    []
+  ) as DeepPartial<T>;
   const form = useReactHookForm({
     resolver: yupResolver(schema as AnyObjectSchema),
     defaultValues,

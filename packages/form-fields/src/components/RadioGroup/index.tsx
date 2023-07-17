@@ -1,4 +1,3 @@
-import { Radio, RadioGroup as MuiRadioGroup } from '@mui/material';
 import {
   InputLabel,
   FormControlLabel,
@@ -6,8 +5,9 @@ import {
   Stack,
   StackProps,
   Box,
-  Field,
-} from '@components';
+  Radio,
+} from '@reactjs-ui/core';
+import { Field } from '@lib';
 import { FieldProps, SelectableOption } from '@interfaces';
 
 export type RadioGroupProps = FieldProps & {
@@ -64,9 +64,13 @@ export const RadioGroup: React.FC<RadioGroupProps> = ({
               />
             ))}
           </Stack>
-          {helperText && <FormHelperText disabled={disabled}>{helperText}</FormHelperText>}
+          {helperText && (
+            <FormHelperText disabled={disabled}>{helperText}</FormHelperText>
+          )}
           {helpers.errorMessage && (
-            <FormHelperText error={helpers.error}>{helpers.errorMessage}</FormHelperText>
+            <FormHelperText error={helpers.error}>
+              {helpers.errorMessage}
+            </FormHelperText>
           )}
         </Box>
       )}

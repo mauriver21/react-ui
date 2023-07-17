@@ -1,10 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { fireEvent, userEvent, within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
-import { Button, Stack, TextField } from '@components';
-import { sleep, useForm } from '@utils';
-import { Schema } from 'yup';
-import * as yup from 'yup';
+import { Button, Stack } from '@reactjs-ui/core';
+import { fireEvent, userEvent, within } from '@storybook/testing-library';
+import { useForm, schema, Schema, TextField } from '@reactjs-ui/form-fields';
+import { sleep } from '@utils';
 
 const meta: Meta = {
   title: 'Forms/TextField',
@@ -33,8 +32,8 @@ export const Overview: Story = {
 
 type Schema1 = { email: string };
 
-const schema1: Schema<Schema1> = yup.object({
-  email: yup.string().email().required(),
+const schema1: Schema<Schema1> = schema.object({
+  email: schema.string().email().required(),
 });
 
 export const InputValidation: Story = {

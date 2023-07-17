@@ -1,4 +1,12 @@
-import { Checkbox, InputLabel, FormHelperText, Stack, StackProps, Box, Field } from '@components';
+import { Checkbox } from '@components';
+import {
+  InputLabel,
+  FormHelperText,
+  Stack,
+  StackProps,
+  Box,
+} from '@reactjs-ui/core';
+import { Field } from '@lib';
 import { FieldProps, SelectableOption } from '@interfaces';
 
 export type CheckboxGroupProps = FieldProps & {
@@ -57,9 +65,13 @@ export const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
               />
             ))}
           </Stack>
-          {helperText && <FormHelperText disabled={disabled}>{helperText}</FormHelperText>}
+          {helperText && (
+            <FormHelperText disabled={disabled}>{helperText}</FormHelperText>
+          )}
           {helpers.errorMessage && (
-            <FormHelperText error={helpers.error}>{helpers.errorMessage}</FormHelperText>
+            <FormHelperText error={helpers.error}>
+              {helpers.errorMessage}
+            </FormHelperText>
           )}
         </Box>
       )}
