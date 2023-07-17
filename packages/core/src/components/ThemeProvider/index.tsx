@@ -27,6 +27,9 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   const [theme, setTheme] = useState(createTheme(themes['defaultDark']));
 
   const changeTheme = (themeName: ThemeName) => {
+    import(
+      `../../themes/styles/${themeName.replace(/(Light|Dark)/gi, '')}/index.tsx`
+    );
     setTheme(createTheme(themes[themeName]));
   };
 

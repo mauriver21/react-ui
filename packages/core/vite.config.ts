@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import dts from 'vite-plugin-dts';
 import { defineConfig } from 'vite';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
 const { peerDependencies, devDependencies } = packageJson;
@@ -12,14 +13,33 @@ const external = [
 ];
 
 export default defineConfig({
-  plugins: [react(), tsconfigPaths(), dts({ include: 'src' })],
+  plugins: [
+    react(),
+    tsconfigPaths(),
+    dts({ include: 'src', exclude: 'src/**/*.stories.@(js|jsx|ts|tsx)' }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'src/assets',
+          dest: '.',
+        },
+        {
+          src: 'src/themes/styles',
+          dest: 'themes',
+        },
+      ],
+    }),
+  ],
+  css: {
+    modules: { scopeBehaviour: 'global' },
+  },
   build: {
     lib: {
       entry: 'src/index.ts',
       fileName: (format: string) => {
         return `${format}/index.js`;
       },
-      formats: ['es', 'cjs'],
+      formats: ['es'],
     },
     rollupOptions: {
       external,
