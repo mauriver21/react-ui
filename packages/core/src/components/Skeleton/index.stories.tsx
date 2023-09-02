@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Skeleton, Stack, Typography } from '@components';
 import { useEffect, useState } from 'react';
-import { sleep } from '@utils';
 import { SkeletonLoader } from '@components';
 
 const meta: Meta<typeof Skeleton> = {
@@ -18,7 +17,6 @@ export const TypographiesSkeleton: Story = {
 
     useEffect(() => {
       (async () => {
-        await sleep(1000);
         setLoading(false);
       })();
     }, []);

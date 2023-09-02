@@ -1,0 +1,5 @@
+.base-route-nav-link,
+.base-route-nav-link:active,
+.base-route-nav-link:visited {
+  color: inherit;
+}
