@@ -37,6 +37,11 @@ export const theme: ThemeOptions = {
       light: '#b6b9e6',
       dark: '#585976',
     },
+    secondary: {
+      main: '#222433',
+      light: '#2B2C3E',
+      dark: '#1E1D2B',
+    },
     success: {
       main: '#6AC692',
       light: '#95DEB5',

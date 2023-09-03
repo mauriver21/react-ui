@@ -24,6 +24,7 @@ export * from './Image';
 export * from './InputLabel';
 export * from './Link';
 export * from './MenuItem';
+export * from './MenuList';
 export * from './NavLink';
 export * from './Radio';
 export * from './Select';
