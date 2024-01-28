@@ -6,18 +6,26 @@ import { ThemeName } from '@interfaces';
 import { Style } from '@components';
 import * as themes from '@themes';
 
+export type ComponentName = keyof Theme['customComponents'];
 export interface ThemeProviderProps
   extends Omit<MuiThemeProviderProps, 'theme'> {
   theme?: Theme;
   themeName?: ThemeName;
 }
 
+const getComponentDefaultProps = (
+  componentName: ComponentName,
+  theme?: Theme
+) => theme?.customComponents?.[componentName]?.defaultProps;
+
 export const ThemeContext = createContext<{
   changeTheme: (themeName: ThemeName) => void;
+  getComponentDefaultProps: typeof getComponentDefaultProps;
 }>({
   changeTheme: (themeName) => {
     themeName;
   },
+  getComponentDefaultProps,
 });
 
 export const useThemeContext = () => useContext(ThemeContext);
@@ -44,6 +52,9 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     setTheme(createTheme(themes[themeName]));
   };
 
+  const _getComponentDefaultProps = (componentName: ComponentName) =>
+    getComponentDefaultProps(componentName, theme);
+
   useEffect(() => {
     loadStyles(themeName);
   }, [themeName]);
@@ -53,7 +64,12 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   }, [rest.theme]);
 
   return (
-    <ThemeContext.Provider value={{ changeTheme }}>
+    <ThemeContext.Provider
+      value={{
+        changeTheme,
+        getComponentDefaultProps: _getComponentDefaultProps,
+      }}
+    >
       <MuiThemeProvider {...rest} theme={theme}>
         <Style id="theme-style" css={themeCss} />
         <CssBaseline />

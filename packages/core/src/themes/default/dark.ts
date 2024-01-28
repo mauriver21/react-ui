@@ -30,6 +30,35 @@ export const theme: ThemeOptions = {
       },
     },
   },
+  customComponents: {
+    Select: {
+      defaultProps: {
+        rootSx: {
+          '& .MuiOutlinedInput-notchedOutline': {
+            borderWidth: '2px',
+          },
+          '.MuiOutlinedInput-root': {
+            borderRadius: '18px',
+            '& .MuiOutlinedInput-notchedOutline': {
+              borderColor: (theme) => {
+                return theme.palette.primary.main;
+              },
+            },
+            '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+              borderColor: (theme) => {
+                return theme.palette.primary.light;
+              },
+            },
+            '&:hover fieldset': {
+              borderColor: (theme) => {
+                return theme.palette.primary.main;
+              },
+            },
+          },
+        },
+      },
+    },
+  },
   palette: {
     mode: 'dark',
     primary: {
