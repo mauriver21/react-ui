@@ -7,7 +7,12 @@
     "core:storybook": "pnpm --filter core storybook",
     "core:build": "pnpm --filter core build",
     "core:local-publish-package": "pnpm --filter core local-publish-package",
-    "core:local-unpublish-package": "pnpm --filter core local-unpublish-package"
+    "core:local-unpublish-package": "pnpm --filter core local-unpublish-package",
+    "form-fields:build": "pnpm --filter form-fields build",
+    "form-fields:local-publish-package": "pnpm --filter form-fields local-publish-package",
+    "form-fields:local-unpublish-package": "pnpm --filter form-fields local-unpublish-package",
+    "local-publish-packages": "pnpm core:build && pnpm core:local-publish-package && pnpm form-fields:build && pnpm form-fields:local-publish-package",
+    "local-unpublish-packages": "pnpm core:local-unpublish-package && pnpm form-fields:local-unpublish-package"
   },
   "keywords": [],
   "author": "Mauricio Rivera",
