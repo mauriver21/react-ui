@@ -1,6 +1,4 @@
 import {
-  Box,
-  FormHelperText,
   TextField as MuiTextField,
   TextFieldProps as MuiTextFieldProps,
 } from '@reactjs-ui/core';
@@ -23,19 +21,13 @@ export const TextField: React.FC<TextFieldProps> = ({
       control={control}
       {...rest}
       render={({ props, helpers }) => (
-        <Box>
-          <MuiTextField fullWidth {...rest} {...props} error={helpers.error} />
-          {helperText && (
-            <FormHelperText disabled={rest.disabled}>
-              {helperText}
-            </FormHelperText>
-          )}
-          {helpers.errorMessage && (
-            <FormHelperText error={helpers.error}>
-              {helpers.errorMessage}
-            </FormHelperText>
-          )}
-        </Box>
+        <MuiTextField
+          fullWidth
+          {...rest}
+          {...props}
+          error={helpers.error}
+          errorMessage={helpers.errorMessage}
+        />
       )}
     />
   );
