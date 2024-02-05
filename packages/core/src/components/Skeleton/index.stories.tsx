@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Skeleton, Stack, Typography } from '@components';
-import { useEffect, useState } from 'react';
 import { SkeletonLoader } from '@components';
 
 const meta: Meta<typeof Skeleton> = {
@@ -13,17 +12,9 @@ export default meta;
 
 export const TypographiesSkeleton: Story = {
   render: () => {
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-      (async () => {
-        setLoading(false);
-      })();
-    }, []);
-
     return (
       <Stack spacing={1}>
-        <SkeletonLoader loading={loading}>
+        <SkeletonLoader loading={true}>
           <Typography variant="h1">h1 text</Typography>
           <Typography variant="h2">h2 text</Typography>
           <Typography variant="h3">h3 text</Typography>

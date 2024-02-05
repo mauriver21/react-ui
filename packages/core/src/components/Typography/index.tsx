@@ -4,6 +4,7 @@ import {
 } from '@mui/material';
 import { WithSkeletonProps, withSkeleton } from '@hocs';
 import { styles } from './styles';
+import { useCallback } from 'react';
 
 export interface TypographyProps extends MuiTypographyProps, WithSkeletonProps {
   component?: any;
@@ -13,10 +14,26 @@ export interface TypographyProps extends MuiTypographyProps, WithSkeletonProps {
   skeletonText?: string;
 }
 
-export const Typography: React.FC<TypographyProps> = withSkeleton(
-  ({ ellipsis, sx, skeletonProps, skeletonText, children, ...rest }) => (
-    <MuiTypography {...rest} sx={{ ...styles({ ellipsis, sx }) }}>
-      {skeletonProps?.loading ? skeletonText || children : children}
-    </MuiTypography>
-  )
-);
+export const Typography: React.FC<TypographyProps> = (
+  props: TypographyProps
+) => {
+  const Component = useCallback(
+    withSkeleton(
+      ({
+        ellipsis,
+        sx,
+        skeletonProps,
+        skeletonText,
+        children,
+        ...rest
+      }: TypographyProps) => (
+        <MuiTypography {...rest} sx={{ ...styles({ ellipsis, sx }) }}>
+          {skeletonProps?.loading ? skeletonText || children : children}
+        </MuiTypography>
+      )
+    ),
+    []
+  );
+
+  return <Component {...props} />;
+};
