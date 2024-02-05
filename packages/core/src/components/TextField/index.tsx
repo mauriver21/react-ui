@@ -12,10 +12,11 @@ export type TextFieldProps = MuiTextFieldProps & {
 export const TextField: React.FC<TextFieldProps> = ({
   helperText,
   errorMessage,
+  fullWidth = true,
   ...rest
 }) => (
-  <Box>
-    <MuiTextField fullWidth {...rest} />
+  <Box width={fullWidth ? '100%' : undefined}>
+    <MuiTextField fullWidth={fullWidth} {...rest} />
     {helperText && (
       <FormHelperText disabled={rest.disabled}>{helperText}</FormHelperText>
     )}
