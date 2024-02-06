@@ -6,10 +6,9 @@ export const theme: ThemeOptions = {
       styleOverrides: {
         root: {
           '& .MuiOutlinedInput-notchedOutline': {
-            borderWidth: '2px',
+            borderWidth: '1px',
           },
           '& .MuiOutlinedInput-root': {
-            borderRadius: 18,
             '& fieldset': {
               get borderColor() {
                 return (theme.palette?.primary as PaletteColor).main;
@@ -35,21 +34,23 @@ export const theme: ThemeOptions = {
       defaultProps: {
         rootSx: {
           '& .MuiOutlinedInput-notchedOutline': {
-            borderWidth: '2px',
+            borderWidth: '1px',
           },
           '.MuiOutlinedInput-root': {
-            borderRadius: '18px',
             '& .MuiOutlinedInput-notchedOutline': {
+              borderWidth: '1px',
               borderColor: (theme) => {
                 return theme.palette.primary.main;
               },
             },
             '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+              borderWidth: '1px',
               borderColor: (theme) => {
                 return theme.palette.primary.light;
               },
             },
             '&:hover fieldset': {
+              borderWidth: '1px',
               borderColor: (theme) => {
                 return theme.palette.primary.main;
               },
