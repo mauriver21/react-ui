@@ -1,18 +1,23 @@
-import { Skeleton, SkeletonProps } from '@components/Skeleton';
-import { useSkeletonContext } from '@components/SkeletonLoader';
+import { Skeleton, SkeletonProps, useSkeletonContext } from '@components';
 
 export interface WithSkeletonProps {
-  skeletonProps?: Omit<SkeletonProps, 'children'>;
+  skeletonText?: string;
+  hideOnSkeleton?: boolean;
 }
 
-export const withSkeleton = <T,>(Component: React.FC<T>) => {
-  return (props: T & WithSkeletonProps) => {
-    const contextProps = useSkeletonContext();
-    const skeletonProps = { ...contextProps, ...props.skeletonProps };
-
+export const withSkeleton = <T,>(
+  Component: React.FC<T>,
+  defaultProps?: Partial<SkeletonProps>
+) => {
+  return (props: T & WithSkeletonProps & JSX.IntrinsicAttributes) => {
+    const skeletonContext = useSkeletonContext();
     return (
-      <Skeleton {...skeletonProps}>
-        <Component {...{ ...props, skeletonProps }} />
+      <Skeleton
+        {...{ ...skeletonContext?.skeletonProps, ...defaultProps }}
+        hideOnSkeleton={props.hideOnSkeleton}
+        loading={skeletonContext?.loading}
+      >
+        <Component {...props} />
       </Skeleton>
     );
   };
