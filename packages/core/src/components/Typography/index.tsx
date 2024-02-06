@@ -5,6 +5,7 @@ import {
 import { withSkeleton } from '@hocs';
 import { styles } from './styles';
 import { useSkeletonContext } from '@components';
+import { useCallback } from 'react';
 
 export interface TypographyProps extends MuiTypographyProps {
   component?: any;
@@ -15,14 +16,28 @@ export interface TypographyProps extends MuiTypographyProps {
   hideOnSkeleton?: boolean;
 }
 
-export const Typography: React.FC<TypographyProps> = withSkeleton(
-  ({ ellipsis, sx, hideOnSkeleton: _, skeletonText, children, ...rest }) => {
-    const skeletonContext = useSkeletonContext();
+export const Typography: React.FC<TypographyProps> = (props) => {
+  const Component = useCallback(
+    withSkeleton(
+      ({
+        ellipsis,
+        sx,
+        hideOnSkeleton: _,
+        skeletonText,
+        children,
+        ...rest
+      }: TypographyProps) => {
+        const skeletonContext = useSkeletonContext();
 
-    return (
-      <MuiTypography {...rest} sx={{ ...styles({ ellipsis, sx }) }}>
-        {skeletonContext?.loading ? skeletonText || children : children}
-      </MuiTypography>
-    );
-  }
-);
+        return (
+          <MuiTypography {...rest} sx={{ ...styles({ ellipsis, sx }) }}>
+            {skeletonContext?.loading ? skeletonText || children : children}
+          </MuiTypography>
+        );
+      }
+    ),
+    []
+  );
+
+  return <Component {...props} />;
+};
