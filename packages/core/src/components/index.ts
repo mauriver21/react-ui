@@ -35,4 +35,5 @@ export * from './Style';
 export * from './Switch';
 export * from './TextField';
 export * from './ThemeProvider';
+export * from './Tooltip';
 export * from './Typography';
