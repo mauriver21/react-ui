@@ -2,38 +2,27 @@ import {
   Typography as MuiTypography,
   TypographyProps as MuiTypographyProps,
 } from '@mui/material';
-import { WithSkeletonProps, withSkeleton } from '@hocs';
+import { withSkeleton } from '@hocs';
 import { styles } from './styles';
-import { useCallback } from 'react';
+import { useSkeletonContext } from '@components';
 
-export interface TypographyProps extends MuiTypographyProps, WithSkeletonProps {
+export interface TypographyProps extends MuiTypographyProps {
   component?: any;
   ellipsis?: {
     maxWidth: TypographyProps['maxWidth'];
   };
   skeletonText?: string;
+  hideOnSkeleton?: boolean;
 }
 
-export const Typography: React.FC<TypographyProps> = (
-  props: TypographyProps
-) => {
-  const Component = useCallback(
-    withSkeleton(
-      ({
-        ellipsis,
-        sx,
-        skeletonProps,
-        skeletonText,
-        children,
-        ...rest
-      }: TypographyProps) => (
-        <MuiTypography {...rest} sx={{ ...styles({ ellipsis, sx }) }}>
-          {skeletonProps?.loading ? skeletonText || children : children}
-        </MuiTypography>
-      )
-    ),
-    []
-  );
+export const Typography: React.FC<TypographyProps> = withSkeleton(
+  ({ ellipsis, sx, hideOnSkeleton: _, skeletonText, children, ...rest }) => {
+    const skeletonContext = useSkeletonContext();
 
-  return <Component {...props} />;
-};
+    return (
+      <MuiTypography {...rest} sx={{ ...styles({ ellipsis, sx }) }}>
+        {skeletonContext?.loading ? skeletonText || children : children}
+      </MuiTypography>
+    );
+  }
+);
