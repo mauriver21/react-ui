@@ -15,11 +15,13 @@ export const theme: ThemeOptions = {
               },
             },
             '&.Mui-focused fieldset': {
+              borderWidth: '1px',
               get borderColor() {
                 return (theme.palette?.primary as PaletteColor).light;
               },
             },
             '&:hover fieldset': {
+              borderWidth: '1px',
               get borderColor() {
                 return (theme.palette?.primary as PaletteColor).light;
               },
