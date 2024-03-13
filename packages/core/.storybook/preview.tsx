@@ -1,6 +1,6 @@
 import type { Preview, StoryContext, StoryFn } from '@storybook/react';
 import { withThemeProvider } from '@hocs';
-import { useThemeContext } from '@components';
+import { DialogFactoryProvider, useThemeContext } from '@components';
 import { useEffect } from 'react';
 
 const globalDecorator = (Story: StoryFn, context: StoryContext) => {
@@ -23,7 +23,7 @@ const GlobalProviders: React.FC<{
     changeTheme(themeName);
   }, [themeName]);
 
-  return <>{children}</>;
+  return <DialogFactoryProvider>{children}</DialogFactoryProvider>;
 });
 
 const preview: Preview = {
