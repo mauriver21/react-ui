@@ -19,3 +19,13 @@ export const Overview: Story = {
     height: 300,
   },
 };
+
+export const ScrollBars: Story = {
+  render: () => {
+    return (
+      <Box overflow="auto" width={300} height={300} border={1}>
+        <Box height={1000}></Box>
+      </Box>
+    );
+  },
+};

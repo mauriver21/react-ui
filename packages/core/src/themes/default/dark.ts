@@ -2,6 +2,26 @@ import { PaletteColor, ThemeOptions } from '@mui/material/styles';
 
 export const theme: ThemeOptions = {
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        html: {
+          overflowY: 'hidden',
+        },
+        'html, body, div': {
+          '& ::-webkit-scrollbar': {
+            width: '7px',
+          },
+          '& ::-webkit-scrollbar-track': {
+            WebkitBoxShadow: 'inset 0 0 6px rgba(0,0,0,0.00)',
+          },
+          '& ::-webkit-scrollbar-thumb': {
+            get backgroundColor() {
+              return (theme.palette?.primary as PaletteColor)?.['200'];
+            },
+          },
+        },
+      },
+    },
     MuiTextField: {
       styleOverrides: {
         root: {
@@ -68,11 +88,25 @@ export const theme: ThemeOptions = {
       main: '#8688AE',
       light: '#b6b9e6',
       dark: '#585976',
+      '100': '#36356C',
+      '200': '#515381',
+      '300': '#6C6D99',
+      '400': '#8688AE',
+      '500': '#A3A5C3',
+      '600': '#BDBECF',
+      '700': '#D6D7E2',
     },
     secondary: {
       main: '#222433',
       light: '#2B2C3E',
       dark: '#1E1D2B',
+      '100': '#000000',
+      '200': '#080a19',
+      '300': '#131531',
+      '400': '#1c1e49',
+      '500': '#252561',
+      '600': '#2e2f78',
+      '700': '#373891',
     },
     success: {
       main: '#6AC692',
