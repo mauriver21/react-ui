@@ -1,5 +1,5 @@
 {
-  "name": "@reactjs-ui/form-fields",
+  "name": "reactjs-ui-form-fields",
   "version": "0.0.0",
   "type": "module",
   "author": {
@@ -32,7 +32,7 @@
     "view-coverage-report": "pnpm coverage-report && cd coverage && npx serve"
   },
   "peerDependencies": {
-    "@reactjs-ui/core": "*"
+    "reactjs-ui-core": "*"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.1.1",
@@ -44,8 +44,7 @@
     "@babel/preset-env": "7.21.4",
     "@babel/preset-react": "7.18.6",
     "@babel/preset-typescript": "7.21.4",
-    "@jest/types": "^29.6.1",
-    "@reactjs-ui/core": "workspace:*",
+    "@jest/types": "^29.6.1",    
     "@storybook/addon-coverage": "^0.0.8",
     "@storybook/addon-essentials": "^7.0.27",
     "@storybook/addon-interactions": "^7.0.27",
@@ -70,6 +69,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "reactjs-ui-core": "workspace:*",
     "storybook": "^7.0.27",
     "ts-jest": "^29.1.1",
     "typescript": "^5.0.2",

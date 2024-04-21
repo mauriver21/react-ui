@@ -4,7 +4,7 @@ import {
   CheckboxProps as BaseCheckboxProps,
   FormControlLabel,
   FormHelperText,
-} from '@reactjs-ui/core';
+} from 'reactjs-ui-core';
 import { Field } from '@lib';
 import { FieldProps } from '@interfaces';
 

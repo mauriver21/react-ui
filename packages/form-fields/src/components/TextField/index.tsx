@@ -1,7 +1,7 @@
 import {
   TextField as MuiTextField,
   TextFieldProps as MuiTextFieldProps,
-} from '@reactjs-ui/core';
+} from 'reactjs-ui-core';
 import { Field } from '@lib';
 import { FieldProps } from '@interfaces';
 

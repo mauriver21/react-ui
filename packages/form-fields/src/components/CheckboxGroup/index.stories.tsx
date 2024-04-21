@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Button, Stack } from '@reactjs-ui/core';
+import { Button, Stack } from 'reactjs-ui-core';
 import {
   CheckboxGroup,
   schema,

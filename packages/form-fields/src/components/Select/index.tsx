@@ -2,7 +2,7 @@ import { FieldProps } from '@interfaces';
 import {
   Select as BaseSelect,
   SelectProps as BaseSelectProps,
-} from '@reactjs-ui/core';
+} from 'reactjs-ui-core';
 import { Field } from '@lib';
 
 export type SelectProps = BaseSelectProps & FieldProps;

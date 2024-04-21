@@ -5,7 +5,7 @@ import {
   Stack,
   StackProps,
   Box,
-} from '@reactjs-ui/core';
+} from 'reactjs-ui-core';
 import { Field } from '@lib';
 import { FieldProps, SelectableOption } from '@interfaces';
 

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Button, Stack } from '@reactjs-ui/core';
+import { Button, Stack } from 'reactjs-ui-core';
 import { schema, Schema, RadioGroup, useForm } from '@reactjs-ui/form-fields';
 import { sleep } from '@utils';
 import { fireEvent, userEvent, within } from '@storybook/testing-library';

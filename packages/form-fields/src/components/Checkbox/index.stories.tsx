@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { fireEvent, userEvent, within } from '@storybook/testing-library';
-import { Button, Stack } from '@reactjs-ui/core';
+import { Button, Stack } from 'reactjs-ui-core';
 import { Checkbox, schema, Schema, useForm } from '@reactjs-ui/form-fields';
 import { sleep } from '@utils';
 import { expect } from '@storybook/jest';
