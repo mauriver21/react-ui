@@ -3,6 +3,8 @@ import { debounce } from '@utils';
 import { CSSProperties, useCallback, useRef, useState } from 'react';
 
 export interface WithTooltipProps {
+  disabled?: boolean;
+  disabledTitle?: string;
   title?: string;
   tooltipProps?: Omit<TooltipProps, 'title' | 'children'>;
   fullWidth?: boolean;
@@ -10,10 +12,18 @@ export interface WithTooltipProps {
 }
 
 export const withTooltip = <T extends WithTooltipProps>(
-  Component: React.FC<T>,
+  Component: React.FC<T>
 ) => {
   return (props: T & JSX.IntrinsicAttributes) => {
-    const { title, tooltipProps, fullWidth, rootStyle, ...rest } = props;
+    const {
+      title: titleProp,
+      disabledTitle,
+      disabled,
+      tooltipProps,
+      fullWidth,
+      rootStyle,
+      ...rest
+    } = props;
     const store = useRef({ mouseEntered: false });
     const [open, setOpen] = useState(false);
 
@@ -21,17 +31,23 @@ export const withTooltip = <T extends WithTooltipProps>(
       debounce(async () => {
         store.current.mouseEntered && setOpen(true);
       }, 200),
-      [],
+      []
     );
 
     const hideTooltip = () => setOpen(false);
+
+    const title = () => {
+      if (disabled && disabledTitle) return disabledTitle;
+      if (disabled) return;
+      return titleProp;
+    };
 
     return (
       <Tooltip
         arrow
         placement="top"
         open={open}
-        title={title}
+        title={title()}
         {...tooltipProps}
       >
         <div
@@ -44,12 +60,16 @@ export const withTooltip = <T extends WithTooltipProps>(
             hideTooltip();
           }}
           style={{
-            display: 'inline-grid',
             width: fullWidth ? '100%' : undefined,
             ...rootStyle,
           }}
         >
-          <Component title={title} {...(rest as T)} />
+          <Component
+            title={title()}
+            fullWidth={fullWidth}
+            disabled={disabled}
+            {...(rest as T)}
+          />
         </div>
       </Tooltip>
     );
