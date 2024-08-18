@@ -3,7 +3,8 @@ import {
   ButtonProps as MuiButtonProps,
 } from '@mui/material';
 import { styles } from './styles';
-import { withSkeleton, withTooltip, WithTooltipProps } from '@hocs';
+import { withSkeleton } from '@hocs/withSkeleton';
+import { withTooltip, WithTooltipProps } from '@hocs/withTooltip';
 
 export interface ButtonProps extends MuiButtonProps, WithTooltipProps {
   direction?: 'row' | 'column';
@@ -36,6 +37,6 @@ export const Button: React.FC<ButtonProps> = withTooltip(
         {...rest}
       />
     ),
-    { fitContent: true },
-  ),
+    { fitContent: true }
+  )
 );

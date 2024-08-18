@@ -59,6 +59,10 @@ export const withTooltip = <T extends WithTooltipProps>(
             store.current.mouseEntered = false;
             hideTooltip();
           }}
+          onClick={() => {
+            store.current.mouseEntered = false;
+            hideTooltip();
+          }}
           style={{
             width: fullWidth ? '100%' : undefined,
             ...rootStyle,

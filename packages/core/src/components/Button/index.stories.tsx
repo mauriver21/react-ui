@@ -12,7 +12,13 @@ export default meta;
 export const Overview: Story = {
   render: () => (
     <Stack maxWidth={150} spacing={1}>
-      <Button title="Button with title" tooltipProps={{ placement: 'right' }}>
+      <Button
+        onBlur={() => {
+          console.log(1);
+        }}
+        title="Button with title"
+        tooltipProps={{ placement: 'right' }}
+      >
         Button with title
       </Button>
       <Button
