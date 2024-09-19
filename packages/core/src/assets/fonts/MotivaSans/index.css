@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Motiva Sans';
+  src: local('Motiva Sans'), url('./regular.ttf') format('truetype');
+  font-weight: 'normal';
+}
+
+@font-face {
+  font-family: 'Motiva Sans';
+  src: local('Motiva Sans'), url('./regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Motiva Sans';
+  src: local('Motiva Sans'), url('./medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Motiva Sans';
+  src: local('Motiva Sans'), url('./bold.ttf') format('truetype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Motiva Sans';
+  src: local('Motiva Sans'), url('./extra-bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Motiva Sans';
+  src: local('Motiva Sans'), url('./black.ttf') format('truetype');
+  font-weight: 800;
+}
