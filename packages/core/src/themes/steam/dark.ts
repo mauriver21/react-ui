@@ -151,7 +151,7 @@ export const theme: ThemeOptions = {
     },
   },
   typography: {
-    fontFamily: 'Poppins',
+    fontFamily: 'Motiva Sans',
     button: {
       textTransform: 'none',
     },
