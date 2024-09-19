@@ -35,7 +35,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   themeName = 'defaultDark',
   ...rest
 }) => {
-  const [theme, setTheme] = useState(createTheme(themes['defaultDark']));
+  const [theme, setTheme] = useState(createTheme(themes[themeName]));
   const [themeCss, setThemeCss] = useState('');
 
   const loadStyles = async (themeName: ThemeName) => {
