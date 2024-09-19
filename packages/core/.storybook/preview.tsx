@@ -58,6 +58,8 @@ export const globalTypes = {
       items: [
         { value: 'defaultLight', left: '☀️', title: 'Default Light' },
         { value: 'defaultDark', left: '🌙', title: 'Default Dark' },
+        { value: 'steamLight', left: '☀️', title: 'Steam Light' },
+        { value: 'steamDark', left: '🌙', title: 'Steam Dark' },
       ],
     },
   },
