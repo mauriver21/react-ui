@@ -1,6 +1,10 @@
 import type { Preview, StoryContext, StoryFn } from '@storybook/react';
 import { withThemeProvider } from '@hocs';
-import { DialogFactoryProvider, useThemeContext } from '@components';
+import {
+  DialogFactoryProvider,
+  I18nProvider,
+  useThemeContext,
+} from '@components';
 import { useEffect } from 'react';
 
 const globalDecorator = (Story: StoryFn, context: StoryContext) => {
@@ -15,7 +19,7 @@ const GlobalProviders: React.FC<{
   children: React.ReactNode;
   context: StoryContext;
 }> = withThemeProvider(({ children, context }) => {
-  const { theme: themeName } = context.globals;
+  const { theme: themeName, locale } = context.globals;
   const { changeTheme } = useThemeContext();
 
   // Theme handler
@@ -23,7 +27,35 @@ const GlobalProviders: React.FC<{
     changeTheme(themeName);
   }, [themeName]);
 
-  return <DialogFactoryProvider>{children}</DialogFactoryProvider>;
+  return (
+    <I18nProvider
+      language={locale}
+      resources={{
+        en: {
+          common: {
+            yes: 'Yes',
+            no: 'No',
+            accept: 'Accept',
+            cancel: 'Cancel',
+            english: 'English',
+            spanish: 'Spanish',
+          },
+        },
+        es: {
+          common: {
+            yes: 'Si',
+            no: 'No',
+            accept: 'Aceptar',
+            cancel: 'Cancelar',
+            english: 'Inglés',
+            spanish: 'Español',
+          },
+        },
+      }}
+    >
+      <DialogFactoryProvider>{children}</DialogFactoryProvider>
+    </I18nProvider>
+  );
 });
 
 const preview: Preview = {
@@ -60,6 +92,19 @@ export const globalTypes = {
         { value: 'defaultDark', left: '🌙', title: 'Default Dark' },
         { value: 'steamLight', left: '☀️', title: 'Steam Light' },
         { value: 'steamDark', left: '🌙', title: 'Steam Dark' },
+      ],
+    },
+  },
+  locale: {
+    name: 'Locale',
+    title: 'Locale',
+    description: 'Internationalization locale',
+    defaultValue: 'en',
+    toolbar: {
+      icon: 'globe',
+      items: [
+        { value: 'en', right: '🇺🇸', title: 'English' },
+        { value: 'es', right: '🇪🇸', title: 'Español' },
       ],
     },
   },

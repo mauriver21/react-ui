@@ -26,6 +26,7 @@ export * from './H3';
 export * from './H4';
 export * from './H5';
 export * from './H6';
+export * from './I18nProvider';
 export * from './Icon';
 export * from './Image';
 export * from './InputLabel';
