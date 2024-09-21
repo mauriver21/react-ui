@@ -108,7 +108,7 @@ export const RadioGroupFill: Story = {
             options={options}
           />
           <Stack direction="row" spacing={1}>
-            <Button type="submit" disabled={form.isInvalid}>
+            <Button type="submit" disabled={form.isInvalid()}>
               Submit
             </Button>
             <Button

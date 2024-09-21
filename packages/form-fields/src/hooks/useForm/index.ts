@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { AnyObjectSchema, AnySchema } from 'yup';
 import {
@@ -40,7 +40,15 @@ export const useForm = <T extends FieldValues>(
     return form.handleSubmit(...(args as Parameters<HandleSubmit>));
   };
 
-  const isInvalid = !form.formState.isValid;
+  const isInvalid = useCallback(
+    () => !form.formState.isValid,
+    [form.formState.isValid]
+  );
 
-  return { ...form, reset, fill, isInvalid, handleSubmit };
+  const hasChanges = useCallback(
+    () => form.formState.isDirty,
+    [form.formState.isDirty]
+  );
+
+  return { ...form, reset, fill, isInvalid, hasChanges, handleSubmit };
 };

@@ -110,7 +110,7 @@ export const SingleSelectFill: Story = {
             helperText="E.g Pizza, hamburger"
           />
           <Stack direction="row" spacing={1}>
-            <Button type="submit" disabled={form.isInvalid}>
+            <Button type="submit" disabled={form.isInvalid()}>
               Submit
             </Button>
             <Button
@@ -256,7 +256,7 @@ export const MultipleSelectFill: Story = {
             helperText="E.g Pizza, hamburger"
           />
           <Stack direction="row" spacing={1}>
-            <Button type="submit" disabled={form.isInvalid}>
+            <Button type="submit" disabled={form.isInvalid()}>
               Submit
             </Button>
             <Button
