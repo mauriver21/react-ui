@@ -45,7 +45,7 @@ export const Image: React.FC<ImageProps> = ({
   }, []);
 
   return (
-    <div>
+    <div style={{ display: 'contents' }}>
       {showLoading && loading ? (
         <Box display="flex" alignItems="center" justifyContent="center">
           <CircularProgress color="info" />
