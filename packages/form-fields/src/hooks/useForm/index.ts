@@ -50,5 +50,15 @@ export const useForm = <T extends FieldValues>(
     [form.formState.isDirty]
   );
 
-  return { ...form, reset, fill, isInvalid, hasChanges, handleSubmit };
+  const getFormValues = (): T => form.getValues();
+
+  return {
+    ...form,
+    reset,
+    fill,
+    isInvalid,
+    hasChanges,
+    handleSubmit,
+    getFormValues,
+  };
 };
