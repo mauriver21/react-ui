@@ -22,7 +22,7 @@ export const Overview: Story = {
 export const Loading: Story = {
   render: () => {
     return (
-      <SkeletonLoader loading={true}>
+      <SkeletonLoader loading>
         <Stack spacing={1}>
           <TextField label="Name" />
           <TextField label="Name" helperText="Some helper text" />

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Select, Stack } from '@components';
+import { Select, SkeletonLoader, Stack } from '@components';
 
 const meta: Meta<typeof Select> = {
   title: 'Forms/Select',
@@ -22,6 +22,34 @@ export const Overview: Story = {
           ]}
         />
       </Stack>
+    );
+  },
+};
+
+export const Loading: Story = {
+  render: () => {
+    return (
+      <SkeletonLoader loading>
+        <Stack spacing={1}>
+          <Select
+            label="Countries"
+            options={[
+              { label: 'Colombia', value: 1 },
+              { label: 'Venezuela', value: 2 },
+              { label: 'Ecuador', value: 3 },
+            ]}
+          />
+          <Select
+            label="Countries"
+            options={[
+              { label: 'Colombia', value: 1 },
+              { label: 'Venezuela', value: 2 },
+              { label: 'Ecuador', value: 3 },
+            ]}
+            helperText="Helper text example..."
+          />
+        </Stack>
+      </SkeletonLoader>
     );
   },
 };
