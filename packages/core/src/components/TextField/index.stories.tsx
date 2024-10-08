@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { TextField, Stack } from '@components';
+import { TextField, Stack, SkeletonLoader } from '@components';
 
 const meta: Meta<typeof TextField> = {
   title: 'Forms/TextField',
@@ -15,6 +15,19 @@ export const Overview: Story = {
       <Stack spacing={1}>
         <TextField label="Name" />
       </Stack>
+    );
+  },
+};
+
+export const Loading: Story = {
+  render: () => {
+    return (
+      <SkeletonLoader loading={true}>
+        <Stack spacing={1}>
+          <TextField label="Name" />
+          <TextField label="Name" helperText="Some helper text" />
+        </Stack>
+      </SkeletonLoader>
     );
   },
 };

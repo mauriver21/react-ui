@@ -1,3 +1,4 @@
+import { withSkeleton } from '@hocs';
 import {
   FormHelperText as MuiFormHelperText,
   FormHelperTextProps as MuiFormHelperTextProps,
@@ -5,6 +6,8 @@ import {
 
 export type FormHelperTextProps = MuiFormHelperTextProps & {};
 
-export const FormHelperText: React.FC<FormHelperTextProps> = (props) => {
-  return <MuiFormHelperText {...props} />;
-};
+export const FormHelperText: React.FC<FormHelperTextProps> = withSkeleton(
+  (props) => {
+    return <MuiFormHelperText {...props} />;
+  }
+);

@@ -1,6 +1,7 @@
 import { Box, FormHelperText } from '@components';
+import { withSkeleton } from '@hocs';
 import {
-  TextField as MuiTextField,
+  TextField as BaseMuiTextField,
   TextFieldProps as MuiTextFieldProps,
 } from '@mui/material';
 
@@ -8,6 +9,8 @@ export type TextFieldProps = MuiTextFieldProps & {
   helperText?: string;
   errorMessage?: string;
 };
+
+const MuiTextField = withSkeleton(BaseMuiTextField, { fitContent: true });
 
 export const TextField: React.FC<TextFieldProps> = ({
   helperText,
