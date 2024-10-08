@@ -1,5 +1,5 @@
 import type { Preview, StoryContext, StoryFn } from '@storybook/react';
-import { withThemeProvider } from '@hocs';
+import { withNotificationsProvider, withThemeProvider } from '@hocs';
 import {
   DialogFactoryProvider,
   I18nProvider,
@@ -18,45 +18,47 @@ const globalDecorator = (Story: StoryFn, context: StoryContext) => {
 const GlobalProviders: React.FC<{
   children: React.ReactNode;
   context: StoryContext;
-}> = withThemeProvider(({ children, context }) => {
-  const { theme: themeName, locale } = context.globals;
-  const { changeTheme } = useThemeContext();
+}> = withThemeProvider(
+  withNotificationsProvider(({ children, context }) => {
+    const { theme: themeName, locale } = context.globals;
+    const { changeTheme } = useThemeContext();
 
-  // Theme handler
-  useEffect(() => {
-    changeTheme(themeName);
-  }, [themeName]);
+    // Theme handler
+    useEffect(() => {
+      changeTheme(themeName);
+    }, [themeName]);
 
-  return (
-    <I18nProvider
-      language={locale}
-      resources={{
-        en: {
-          common: {
-            yes: 'Yes',
-            no: 'No',
-            accept: 'Accept',
-            cancel: 'Cancel',
-            english: 'English',
-            spanish: 'Spanish',
+    return (
+      <I18nProvider
+        language={locale}
+        resources={{
+          en: {
+            common: {
+              yes: 'Yes',
+              no: 'No',
+              accept: 'Accept',
+              cancel: 'Cancel',
+              english: 'English',
+              spanish: 'Spanish',
+            },
           },
-        },
-        es: {
-          common: {
-            yes: 'Si',
-            no: 'No',
-            accept: 'Aceptar',
-            cancel: 'Cancelar',
-            english: 'Inglés',
-            spanish: 'Español',
+          es: {
+            common: {
+              yes: 'Si',
+              no: 'No',
+              accept: 'Aceptar',
+              cancel: 'Cancelar',
+              english: 'Inglés',
+              spanish: 'Español',
+            },
           },
-        },
-      }}
-    >
-      <DialogFactoryProvider>{children}</DialogFactoryProvider>
-    </I18nProvider>
-  );
-});
+        }}
+      >
+        <DialogFactoryProvider>{children}</DialogFactoryProvider>
+      </I18nProvider>
+    );
+  })
+);
 
 const preview: Preview = {
   parameters: {

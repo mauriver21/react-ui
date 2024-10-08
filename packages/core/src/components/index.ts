@@ -35,6 +35,7 @@ export * from './LoadingBackdrop';
 export * from './MenuItem';
 export * from './MenuList';
 export * from './NavLink';
+export * from './NotificationsProvider';
 export * from './Radio';
 export * from './Select';
 export * from './Skeleton';
