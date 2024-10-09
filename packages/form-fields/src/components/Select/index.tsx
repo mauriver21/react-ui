@@ -25,6 +25,7 @@ export const Select: React.FC<SelectProps> = ({
       render={({ props, helpers }) => (
         <BaseSelect
           options={options}
+          rootSx={rootSx}
           {...rest}
           {...props}
           errorMessage={helpers.errorMessage}
