@@ -65,7 +65,7 @@ export const theme: ThemeOptions = {
   customComponents: {
     Select: {
       defaultProps: {
-        rootSx: {
+        defaultRootSx: {
           '& .MuiOutlinedInput-notchedOutline': {
             borderWidth: '1px',
           },

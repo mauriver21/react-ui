@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Preview, StoryContext, StoryFn } from '@storybook/react';
-import { useThemeContext, withThemeProvider } from '@reactjs-ui/core';
+import { useThemeContext, withThemeProvider } from 'reactjs-ui-core';
 import { useEffect } from 'react';
 
 const globalDecorator = (Story: StoryFn, context: StoryContext) => {
