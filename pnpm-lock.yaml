@@ -128,6 +128,9 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+      react-highlight:
+        specifier: ^0.15.0
+        version: 0.15.0
       react-i18next:
         specifier: ^15.0.2
         version: 15.0.2(i18next@23.15.1)(react-dom@18.2.0)(react@18.2.0)
@@ -8532,6 +8535,10 @@ packages:
     hasBin: true
     dev: true
 
+  /highlight.js@10.7.3:
+    resolution: {integrity: sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==}
+    dev: true
+
   /hoist-non-react-statics@3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
     dependencies:
@@ -11304,6 +11311,12 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-is: 18.1.0
+    dev: true
+
+  /react-highlight@0.15.0:
+    resolution: {integrity: sha512-5uV/b/N4Z421GSVVe05fz+OfTsJtFzx/fJBdafZyw4LS70XjIZwgEx3Lrkfc01W/RzZ2Dtfb0DApoaJFAIKBtA==}
+    dependencies:
+      highlight.js: 10.7.3
     dev: true
 
   /react-hook-form@7.45.2(react@18.2.0):
