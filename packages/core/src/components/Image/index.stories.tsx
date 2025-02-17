@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Box, Image, Stack } from '@components';
-import { useState } from 'react';
+import { Box, Image, ImageHandle, Stack } from '@components';
+import { useEffect, useRef, useState } from 'react';
 
 const meta: Meta = {
   title: 'Components/Image',
@@ -14,6 +14,14 @@ type Story = StoryObj<typeof Image>;
 export const Overview: Story = {
   render: () => {
     const [imageError, setImageError] = useState('');
+    const imgRef1 = useRef<ImageHandle>(null);
+
+    useEffect(() => {
+      const img = imgRef1.current?.img;
+      if (img) {
+        img.style.border = '1px solid red';
+      }
+    }, []);
 
     return (
       <Stack spacing={2}>
@@ -48,6 +56,7 @@ export const Overview: Story = {
           justifyContent="center"
         >
           <Image
+            ref={imgRef1}
             showLoading
             src="https://vastphotos.com/files/uploads/photos/11809/spring-green-hills-vast-xl.jpg?v=20240503092916"
             width="100%"
