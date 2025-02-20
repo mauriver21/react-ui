@@ -2,9 +2,9 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { CssBaseline, Theme, createTheme } from '@mui/material';
 import { ThemeProviderProps as MuiThemeProviderProps } from '@mui/material/styles/ThemeProvider';
 import { ThemeProvider as MuiThemeProvider } from '@mui/material';
-import { ThemeName } from '@interfaces';
-import { Style } from '@components';
-import * as themes from '@themes';
+import { ThemeName } from '@interfaces/ThemeName';
+import { Style } from '@components/Style';
+import * as themes from '@themes/index';
 
 export type ComponentName = keyof Theme['customComponents'];
 export interface ThemeProviderProps

@@ -1,4 +1,4 @@
-import { WithNavLinkProps, withNavLink } from '@hocs';
+import { WithNavLinkProps, withNavLink } from '@hocs/withNavLink';
 import {
   MenuItem as MuiMenuItem,
   MenuItemProps as MuiMenuItemProps,

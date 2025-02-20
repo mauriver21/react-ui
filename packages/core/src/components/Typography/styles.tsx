@@ -1,4 +1,4 @@
-import { TypographyProps } from '@components';
+import { TypographyProps } from '@components/Typography';
 
 export const styles = ({
   ellipsis,

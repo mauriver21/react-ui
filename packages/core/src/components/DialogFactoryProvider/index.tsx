@@ -1,5 +1,8 @@
-import { Body2, Button, Dialog, DialogProps, Stack } from '@components';
-import { sleep } from '@utils';
+import { Body2 } from '@components/Body2';
+import { Button } from '@components/Button';
+import { Dialog, DialogProps } from '@components/Dialog';
+import { Stack } from '@components/Stack';
+import { sleep } from '@utils/sleep';
 import React, { useRef } from 'react';
 import {
   ReactNode,

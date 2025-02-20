@@ -1,5 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { TextField, Stack, SkeletonLoader } from '@components';
+import { TextField } from '@components/TextField';
+import { Stack } from '@components/Stack';
+import { SkeletonLoader } from '@components/SkeletonLoader';
 
 const meta: Meta<typeof TextField> = {
   title: 'Forms/TextField',

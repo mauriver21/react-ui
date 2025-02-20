@@ -1,3 +1,6 @@
+import { Body2 } from '@components/Body2';
+import { Box } from '@components/Box';
+import { CircularProgress } from '@components/CircularProgress';
 import {
   forwardRef,
   useEffect,
@@ -5,7 +8,6 @@ import {
   useRef,
   useState,
 } from 'react';
-import { Body2, Box, CircularProgress } from '@components';
 
 export interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   onImageError?: (message: string) => void;

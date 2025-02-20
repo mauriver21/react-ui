@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { AbsoluteBox } from '@components';
+import { AbsoluteBox } from '@components/AbsoluteBox';
 
 const meta: Meta<typeof AbsoluteBox> = {
   title: 'Layout Components/AbsoluteBox',

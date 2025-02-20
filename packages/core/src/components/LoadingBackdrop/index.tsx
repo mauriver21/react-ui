@@ -1,4 +1,7 @@
-import { AbsoluteBox, BoxProps, CircularProgress, Stack } from '@components';
+import { AbsoluteBox } from '@components/AbsoluteBox';
+import { BoxProps } from '@components/Box';
+import { CircularProgress } from '@components/CircularProgress';
+import { Stack } from '@components/Stack';
 
 export interface LoadingBackdropProps extends BoxProps {}
 

@@ -1,4 +1,4 @@
-import { ComponentName, useThemeContext } from '@components';
+import { ComponentName, useThemeContext } from '@components/ThemeProvider';
 
 /**
  * HoC for setting pre-configured component default props retrieved from

@@ -1,5 +1,5 @@
 import { styles } from './styles';
-import { Typography, TypographyProps } from '@components';
+import { Typography, TypographyProps } from '@components/Typography';
 
 export interface IconProps extends Omit<TypographyProps, 'variant'> {
   render: React.FC;

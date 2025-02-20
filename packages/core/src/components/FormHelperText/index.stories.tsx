@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { FormHelperText } from '@components';
+import { FormHelperText } from '@components/FormHelperText';
 
 const meta: Meta = {
   title: 'Forms/FormHelperText',

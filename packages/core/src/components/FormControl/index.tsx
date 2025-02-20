@@ -1,4 +1,4 @@
-import { withSkeleton } from '@hocs';
+import { withSkeleton } from '@hocs/withSkeleton';
 import {
   FormControl as MuiFormControl,
   FormControlProps as MuiFormControlProps,

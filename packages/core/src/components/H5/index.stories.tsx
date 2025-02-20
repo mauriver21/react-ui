@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { H5 } from '@components';
+import { H5 } from '@components/H5';
 
 const meta: Meta = {
   title: 'Typographies/H5',

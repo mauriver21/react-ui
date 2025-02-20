@@ -1,4 +1,4 @@
-import { Box, BoxProps } from '@components';
+import { Box, BoxProps } from '@components/Box';
 
 export interface AbsoluteBoxProps extends Omit<BoxProps, 'position'> {}
 

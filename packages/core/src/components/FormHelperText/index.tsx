@@ -1,4 +1,4 @@
-import { withSkeleton } from '@hocs';
+import { withSkeleton } from '@hocs/withSkeleton';
 import {
   FormHelperText as MuiFormHelperText,
   FormHelperTextProps as MuiFormHelperTextProps,

@@ -1,5 +1,6 @@
+import { BoxProps } from '@components/Box';
+import { NavLink, NavLinkProps } from '@components/NavLink';
 import { Path } from 'react-router-dom';
-import { BoxProps, NavLink, NavLinkProps } from '@components';
 
 /**
  * HOC for conditionally wrapping a component with the react router dom NavLink component.

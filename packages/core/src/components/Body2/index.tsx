@@ -1,4 +1,4 @@
-import { Typography, TypographyProps } from '@components';
+import { Typography, TypographyProps } from '@components/Typography';
 
 export interface Body2Props extends Omit<TypographyProps, 'variant'> {}
 

@@ -1,5 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Select, SkeletonLoader, Stack } from '@components';
+import { Select } from '@components/Select';
+import { Stack } from '@components/Stack';
+import { SkeletonLoader } from '@components/SkeletonLoader';
 
 const meta: Meta<typeof Select> = {
   title: 'Forms/Select',

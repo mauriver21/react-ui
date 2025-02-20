@@ -1,4 +1,4 @@
-import { formatObjectPath } from '@utils';
+import { formatObjectPath } from '@utils/formatObjectPath';
 
 /**
  * Gets the value from a nested object path.

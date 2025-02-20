@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { FormControlLabel } from '@components';
+import { FormControlLabel } from '@components/FormControlLabel';
 
 const meta: Meta = {
   title: 'Forms/FormControlLabel',

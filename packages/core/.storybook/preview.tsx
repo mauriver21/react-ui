@@ -1,10 +1,9 @@
 import type { Preview, StoryContext, StoryFn } from '@storybook/react';
-import { withNotificationsProvider, withThemeProvider } from '@hocs';
-import {
-  DialogFactoryProvider,
-  I18nProvider,
-  useThemeContext,
-} from '@components';
+import { withThemeProvider } from '@hocs/withThemeProvider';
+import { withNotificationsProvider } from '@hocs/withNotificationsProvider';
+import { DialogFactoryProvider } from '@components/DialogFactoryProvider';
+import { I18nProvider } from '@components/I18nProvider';
+import { useThemeContext } from '@components/ThemeProvider';
 import { useEffect } from 'react';
 
 const globalDecorator = (Story: StoryFn, context: StoryContext) => {

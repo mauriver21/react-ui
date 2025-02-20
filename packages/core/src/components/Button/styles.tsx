@@ -1,4 +1,4 @@
-import { ButtonProps } from '@components';
+import { ButtonProps } from '@components/Button';
 
 export const styles = ({
   sx,

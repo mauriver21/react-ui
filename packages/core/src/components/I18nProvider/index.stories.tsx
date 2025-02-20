@@ -1,5 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { I18nProvider, Stack, Typography, useI18n } from '@components';
+import { I18nProvider, useI18n } from '@components/I18nProvider';
+import { Stack } from '@components/Stack';
+import { Typography } from '@components/Typography';
 
 const meta: Meta<typeof I18nProvider> = {
   title: 'I18n/I18nProvider',

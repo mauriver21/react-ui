@@ -1,8 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Skeleton, Stack, Typography } from '@components';
 import { useEffect, useState } from 'react';
-import { sleep } from '@utils';
-import { SkeletonLoader } from '@components';
+import { Skeleton } from '@components/Skeleton';
+import { sleep } from '@utils/sleep';
+import { SkeletonLoader } from '@components/SkeletonLoader';
+import { Stack } from '@components/Stack';
+import { Typography } from '@components/Typography';
 
 const meta: Meta<typeof Skeleton> = {
   title: 'Layout Components/Skeleton',

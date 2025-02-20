@@ -1,13 +1,10 @@
-import {
-  Box,
-  BoxProps,
-  FormControl,
-  FormHelperText,
-  InputLabel,
-  MenuItem,
-} from '@components';
-import { withDefaultProps } from '@hocs';
-import { SelectableOption } from '@interfaces';
+import { Box, BoxProps } from '@components/Box';
+import { FormControl } from '@components/FormControl';
+import { FormHelperText } from '@components/FormHelperText';
+import { InputLabel } from '@components/InputLabel';
+import { MenuItem } from '@components/MenuItem';
+import { withDefaultProps } from '@hocs/withDefaultProps';
+import { SelectableOption } from '@interfaces/SelectableOption';
 import {
   Select as MuiSelect,
   SelectProps as MuiSelectProps,

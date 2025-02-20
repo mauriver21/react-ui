@@ -1,5 +1,5 @@
-import { Tooltip, TooltipProps } from '@components';
-import { debounce } from '@utils';
+import { Tooltip, TooltipProps } from '@components/Tooltip';
+import { debounce } from '@utils/debounce';
 import { CSSProperties, useCallback, useRef, useState } from 'react';
 
 export interface WithTooltipProps {

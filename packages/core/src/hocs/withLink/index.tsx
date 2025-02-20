@@ -1,5 +1,5 @@
+import { Link, LinkProps } from '@components/Link';
 import { Path } from 'react-router-dom';
-import { Link, LinkProps } from '@components';
 
 /**
  * HOC for conditionally wrapping a component with the react router dom Link component.

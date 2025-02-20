@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Icon, Stack } from '@components';
+import { Icon } from '@components/Icon';
+import { Stack } from '@components/Stack';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const meta: Meta = {

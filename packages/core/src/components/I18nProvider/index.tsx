@@ -1,7 +1,7 @@
 import i18n, { i18n as I18n, Resource } from 'i18next';
 import { initReactI18next, useTranslation } from 'react-i18next';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { get } from '@utils';
+import { get } from '@utils/get';
 
 type Translation = ReturnType<typeof useTranslation>;
 

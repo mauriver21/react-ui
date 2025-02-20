@@ -1,14 +1,14 @@
+import React, { useEffect, useState } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
+import { Dialog } from '@components/Dialog';
 import {
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
   useDialog,
   useDialogFactoryContext,
-} from '@components';
-import React, { useEffect, useState } from 'react';
+} from '@components/DialogFactoryProvider';
+import { DialogContent } from '@components/DialogContent';
+import { DialogContentText } from '@components/DialogContentText';
+import { DialogActions } from '@components/DialogActions';
+import { Button } from '@components/Button';
 
 const meta: Meta<typeof Dialog> = {
   title: 'Components/Dialog',

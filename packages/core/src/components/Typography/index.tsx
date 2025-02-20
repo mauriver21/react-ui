@@ -2,10 +2,10 @@ import {
   Typography as MuiTypography,
   TypographyProps as MuiTypographyProps,
 } from '@mui/material';
-import { withSkeleton } from '@hocs';
+import { withSkeleton } from '@hocs/withSkeleton';
 import { styles } from './styles';
-import { useSkeletonContext } from '@components';
 import { useCallback } from 'react';
+import { useSkeletonContext } from '@components/SkeletonLoader';
 
 export interface TypographyProps extends MuiTypographyProps {
   component?: any;

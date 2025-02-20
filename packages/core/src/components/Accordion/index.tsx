@@ -3,15 +3,15 @@ import {
   Accordion as MuiAccordion,
   AccordionProps as MuiAccordionProps,
 } from '@mui/material';
-import {
-  AccordionSummary,
-  AccordionDetails,
-  Typography,
-  AccordionDetailsProps,
-  Icon,
-} from '@components';
 import { useEffect, useRef, useState } from 'react';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import {
+  AccordionDetails,
+  AccordionDetailsProps,
+} from '@components/AccordionDetails';
+import { Icon } from '@components/Icon';
+import { AccordionSummary } from '@components/AccordionSummary';
+import { Typography } from '@components/Typography';
 
 export interface AccordionProps extends Omit<MuiAccordionProps, 'onClick'> {
   label?: string | React.ReactNode;

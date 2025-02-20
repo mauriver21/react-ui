@@ -1,6 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Box, Image, ImageHandle, Stack } from '@components';
+import { Image, ImageHandle } from '@components/Image';
 import { useEffect, useRef, useState } from 'react';
+import { Stack } from '@components/Stack';
+import { Box } from '@components/Box';
 
 const meta: Meta = {
   title: 'Components/Image',

@@ -17,13 +17,11 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "./",
     "paths": {
-      "@components": ["src/components"],
       "@components/*": ["src/components/*"],
-      "@hocs": ["src/hocs"],
       "@hocs/*": ["src/hocs/*"],
-      "@interfaces": ["src/interfaces"],
-      "@utils": ["src/utils"],
-      "@themes": ["src/themes"]
+      "@interfaces/*": ["src/interfaces/*"],
+      "@utils/*": ["src/utils/*"],
+      "@themes/*": ["src/themes/*"]
     }
   },
   "references": [{ "path": "./tsconfig.node.json" }]

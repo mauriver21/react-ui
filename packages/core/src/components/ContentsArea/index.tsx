@@ -1,5 +1,6 @@
 import { styled } from '@mui/material';
-import { getTime, sleep } from '@utils';
+import { getTime } from '@utils/getTime';
+import { sleep } from '@utils/sleep';
 import React, {
   RefObject,
   createContext,

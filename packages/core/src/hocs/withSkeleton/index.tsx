@@ -1,4 +1,5 @@
-import { Skeleton, SkeletonProps, useSkeletonContext } from '@components';
+import { Skeleton, SkeletonProps } from '@components/Skeleton';
+import { useSkeletonContext } from '@components/SkeletonLoader';
 
 export interface WithSkeletonProps {
   skeletonText?: string;

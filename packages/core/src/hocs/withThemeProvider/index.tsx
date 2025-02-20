@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@components';
+import { ThemeProvider } from '@components/ThemeProvider';
 
 export const withThemeProvider = <T,>(Component: React.FC<T>) => {
   return (props: T & JSX.IntrinsicAttributes) => {

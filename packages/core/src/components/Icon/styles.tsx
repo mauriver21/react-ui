@@ -1,4 +1,4 @@
-import { IconProps } from '@components';
+import { IconProps } from '@components/Icon';
 
 export const styles = ({
   size,

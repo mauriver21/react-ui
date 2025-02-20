@@ -1,6 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Box, Button, Stack, ThemeProvider, Typography } from '@components';
 import { BoxProps } from '@mui/material';
+import { ThemeProvider } from '@components/ThemeProvider';
+import { Box } from '@components/Box';
+import { Typography } from '@components/Typography';
+import { Stack } from '@components/Stack';
+import { Button } from '@components/Button';
 
 const meta: Meta<typeof ThemeProvider> = {
   title: 'Theming/ThemeProvider',

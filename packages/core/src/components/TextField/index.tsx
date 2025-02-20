@@ -1,5 +1,6 @@
-import { Box, FormHelperText } from '@components';
-import { withSkeleton } from '@hocs';
+import { Box } from '@components/Box';
+import { FormHelperText } from '@components/FormHelperText';
+import { withSkeleton } from '@hocs/withSkeleton';
 import {
   TextField as BaseMuiTextField,
   TextFieldProps as MuiTextFieldProps,

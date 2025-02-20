@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import { SkeletonProps } from '@components';
+import { SkeletonProps } from '@components/Skeleton';
 
 export const SkeletonContext = createContext<Pick<
   SkeletonLoaderProps,

@@ -1,5 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Card, Stack, Typography } from '@components';
+import { Stack } from '@components/Stack';
+import { Card } from '@components/Card';
+import { Typography } from '@components/Typography';
 
 const meta: Meta<typeof Stack> = {
   title: 'Layout Components/Stack',

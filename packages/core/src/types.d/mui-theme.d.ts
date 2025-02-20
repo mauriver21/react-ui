@@ -1,4 +1,6 @@
-import { SelectProps, TextFieldProps, TimePickerProps } from '@components';
+import { SelectProps } from '@components/Select';
+import { TextFieldProps } from '@components/TextField';
+import { TimePickerProps } from '@components/TimePickerProps';
 
 interface PaletteScales {
   '100'?: string;

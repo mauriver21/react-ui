@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Body2 } from '@components';
+import { Body2 } from '@components/Body2';
 
 const meta: Meta = {
   title: 'Typographies/Body2',
