@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Code } from '@components/Code';
+import { Stack } from '@components/Stack';
 
 const meta: Meta<typeof Code> = {
   title: 'Components/Code',
@@ -14,6 +15,11 @@ export default meta;
 
 export const Overview: Story = {
   render: () => {
-    return <Code codePath="codeSnippets/demo1.ts" />;
+    return (
+      <Stack spacing={2}>
+        <Code language="tsx" codePath="codeSnippets/tsx-demo1.ts" />
+        <Code language="bash" codePath="codeSnippets/bash-demo1.sh" />
+      </Stack>
+    );
   },
 };

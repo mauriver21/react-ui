@@ -7,7 +7,7 @@ import { I18nProvider } from '@components/I18nProvider';
 import { useThemeContext } from '@components/ThemeProvider';
 import { useEffect } from 'react';
 
-const scratches = import.meta.glob('../src/scratches/**/*.(ts|tsx)', {
+const scratches = import.meta.glob('../src/scratches/**/*.(ts|tsx|sh)', {
   as: 'raw',
 });
 
