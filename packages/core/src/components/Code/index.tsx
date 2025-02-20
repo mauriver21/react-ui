@@ -16,7 +16,8 @@ export interface CodeProps extends BoxProps {
 
 export const Code: React.FC<CodeProps> = ({
   language,
-  content,
+  codePath,
+  content: contentProp = '',
   codeClass,
   mapReplace,
   noBorder,
@@ -24,6 +25,8 @@ export const Code: React.FC<CodeProps> = ({
 }) => {
   const codeContext = useCodeContext();
   const [code, setCode] = useState('');
+  const initialized =
+    codeContext?.loading === false || codeContext === undefined;
 
   const formatCode = (code: string = '') => {
     mapReplace &&
@@ -41,9 +44,15 @@ export const Code: React.FC<CodeProps> = ({
   };
 
   useEffect(() => {
-    const code = formatCode(content);
-    code && setCode(code);
-  }, []);
+    if (initialized) {
+      let content = '';
+      if (codePath) content = codeContext?.getRawCode(codePath) || '';
+      content = contentProp;
+
+      const code = formatCode(content);
+      code && setCode(code);
+    }
+  }, [initialized]);
 
   return (
     <Box {...rest}>
