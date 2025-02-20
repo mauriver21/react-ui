@@ -1,10 +1,33 @@
 import type { Preview, StoryContext, StoryFn } from '@storybook/react';
 import { withThemeProvider } from '@hocs/withThemeProvider';
 import { withNotificationsProvider } from '@hocs/withNotificationsProvider';
+import { CodeProvider } from '@components/CodeProvider';
 import { DialogFactoryProvider } from '@components/DialogFactoryProvider';
 import { I18nProvider } from '@components/I18nProvider';
 import { useThemeContext } from '@components/ThemeProvider';
 import { useEffect } from 'react';
+
+const scratches = import.meta.glob('../src/scratches/**/*.(ts|tsx)', {
+  as: 'raw',
+});
+
+const modules = { ...scratches };
+const snippets: { [key: string]: string } = {};
+
+export const loadSnippets = async () => {
+  const promises: Promise<void>[] = [];
+
+  for (const [key, value] of Object.entries(modules)) {
+    promises.push(
+      new Promise(async (resolve) => {
+        (snippets[key] = await value()), resolve();
+      })
+    );
+  }
+
+  await Promise.all(promises);
+  return snippets;
+};
 
 const globalDecorator = (Story: StoryFn, context: StoryContext) => {
   return (
@@ -28,33 +51,35 @@ const GlobalProviders: React.FC<{
     }, [themeName]);
 
     return (
-      <I18nProvider
-        language={locale}
-        resources={{
-          en: {
-            common: {
-              yes: 'Yes',
-              no: 'No',
-              accept: 'Accept',
-              cancel: 'Cancel',
-              english: 'English',
-              spanish: 'Spanish',
+      <CodeProvider loadCodeSnippets={loadSnippets}>
+        <I18nProvider
+          language={locale}
+          resources={{
+            en: {
+              common: {
+                yes: 'Yes',
+                no: 'No',
+                accept: 'Accept',
+                cancel: 'Cancel',
+                english: 'English',
+                spanish: 'Spanish',
+              },
             },
-          },
-          es: {
-            common: {
-              yes: 'Si',
-              no: 'No',
-              accept: 'Aceptar',
-              cancel: 'Cancelar',
-              english: 'Inglés',
-              spanish: 'Español',
+            es: {
+              common: {
+                yes: 'Si',
+                no: 'No',
+                accept: 'Aceptar',
+                cancel: 'Cancelar',
+                english: 'Inglés',
+                spanish: 'Español',
+              },
             },
-          },
-        }}
-      >
-        <DialogFactoryProvider>{children}</DialogFactoryProvider>
-      </I18nProvider>
+          }}
+        >
+          <DialogFactoryProvider>{children}</DialogFactoryProvider>
+        </I18nProvider>
+      </CodeProvider>
     );
   })
 );

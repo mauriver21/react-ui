@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 
 export type CodeContextType = {
   getRawCode: (path: string) => string;
@@ -19,9 +25,10 @@ export const CodeProvider: React.FC<CodeProviderProps> = ({
   loadCodeSnippets,
 }) => {
   const [loading, setLoading] = useState(true);
-  const [snippets, setSnippets] = useState<{ [key: string]: string }>({});
+  const ref = useRef<{ snippets: { [key: string]: string } }>({ snippets: {} });
 
   const getRawCode = (path: string): string => {
+    const snippets = ref.current.snippets;
     path = path.replace(/^\//, '');
 
     for (let key in snippets) {
@@ -34,7 +41,7 @@ export const CodeProvider: React.FC<CodeProviderProps> = ({
   };
 
   const init = async () => {
-    setSnippets(await loadCodeSnippets());
+    ref.current.snippets = await loadCodeSnippets();
     setLoading(false);
   };
 

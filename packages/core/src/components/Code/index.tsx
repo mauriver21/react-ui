@@ -1,9 +1,9 @@
-import Highlight from 'react-highlight';
-import 'highlight.js/styles/atom-one-dark.css';
-import './index.css';
 import React, { useEffect, useState } from 'react';
 import { Box, BoxProps } from '@components/Box';
 import { useCodeContext } from '@components/CodeProvider';
+import Highlight from 'react-highlight';
+import 'highlight.js/styles/atom-one-dark.css';
+import './index.css';
 
 export interface CodeProps extends BoxProps {
   language?: string;
@@ -46,8 +46,11 @@ export const Code: React.FC<CodeProps> = ({
   useEffect(() => {
     if (initialized) {
       let content = '';
-      if (codePath) content = codeContext?.getRawCode(codePath) || '';
-      content = contentProp;
+      if (codePath) {
+        content = codeContext?.getRawCode(codePath) || contentProp;
+      } else {
+        content = contentProp;
+      }
 
       const code = formatCode(content);
       code && setCode(code);

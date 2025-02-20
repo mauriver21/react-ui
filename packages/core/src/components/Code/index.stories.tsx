@@ -14,6 +14,6 @@ export default meta;
 
 export const Overview: Story = {
   render: () => {
-    return <Code content="hello world" />;
+    return <Code codePath="codeSnippets/demo1.ts" />;
   },
 };

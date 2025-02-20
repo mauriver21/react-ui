@@ -22,7 +22,8 @@
       "@interfaces/*": ["src/interfaces/*"],
       "@utils/*": ["src/utils/*"],
       "@themes/*": ["src/themes/*"]
-    }
+    },
+    "types": ["vite/client"]
   },
   "references": [{ "path": "./tsconfig.node.json" }]
 }
