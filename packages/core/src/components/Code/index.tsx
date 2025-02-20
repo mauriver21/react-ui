@@ -3,10 +3,12 @@ import 'highlight.js/styles/atom-one-dark.css';
 import './index.css';
 import React, { useEffect, useState } from 'react';
 import { Box, BoxProps } from '@components/Box';
+import { useCodeContext } from '@components/CodeProvider';
 
 export interface CodeProps extends BoxProps {
   language?: string;
   content?: string;
+  codePath?: string;
   codeClass?: string;
   mapReplace?: { [matchText: string]: string };
   noBorder?: boolean;
@@ -20,6 +22,7 @@ export const Code: React.FC<CodeProps> = ({
   noBorder,
   ...rest
 }) => {
+  const codeContext = useCodeContext();
   const [code, setCode] = useState('');
 
   const formatCode = (code: string = '') => {

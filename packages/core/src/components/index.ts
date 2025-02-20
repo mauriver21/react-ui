@@ -12,6 +12,7 @@ export * from './CardContent';
 export * from './Checkbox';
 export * from './CircularProgress';
 export * from './Code';
+export * from './CodeProvider';
 export * from './ContentsArea';
 export * from './Dialog';
 export * from './DialogActions';
