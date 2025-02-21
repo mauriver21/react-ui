@@ -1,23 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Box, BoxProps } from '@components/Box';
 import { useCodeContext } from '@components/CodeProvider';
+import { CodeStrategy } from '@interfaces/CodeStrategy';
 import Highlight from 'react-highlight';
 import 'highlight.js/styles/atom-one-dark.css';
 import './index.css';
 
-export interface CodeProps extends BoxProps {
+export type CodeProps = BoxProps & {
   language?: string;
-  content?: string;
-  codePath?: string;
   codeClass?: string;
   mapReplace?: { [matchText: string]: string };
   noBorder?: boolean;
-}
+} & CodeStrategy;
 
 export const Code: React.FC<CodeProps> = ({
   language,
-  codePath,
-  content: contentProp = '',
   codeClass,
   mapReplace,
   noBorder,
@@ -46,10 +43,10 @@ export const Code: React.FC<CodeProps> = ({
   useEffect(() => {
     if (initialized) {
       let content = '';
-      if (codePath) {
-        content = codeContext?.getRawCode(codePath) || contentProp;
-      } else {
-        content = contentProp;
+      if (rest.type === 'path') {
+        content = codeContext?.getRawCode(rest.codePath) || '';
+      } else if (rest.type === 'content') {
+        content = rest.code;
       }
 
       const code = formatCode(content);

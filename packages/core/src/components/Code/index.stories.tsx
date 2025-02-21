@@ -17,8 +17,12 @@ export const Overview: Story = {
   render: () => {
     return (
       <Stack spacing={2}>
-        <Code language="tsx" codePath="codeSnippets/tsx-demo1.ts" />
-        <Code language="bash" codePath="codeSnippets/bash-demo1.sh" />
+        <Code type="path" language="tsx" codePath="codeSnippets/tsx-demo1.ts" />
+        <Code
+          type="path"
+          language="bash"
+          codePath="codeSnippets/bash-demo1.sh"
+        />
       </Stack>
     );
   },

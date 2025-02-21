@@ -20,11 +20,7 @@ export const CodeTabs: React.FC<CodeTabsProps> = ({ tabs }) => {
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs
-          value={tabIndex}
-          onChange={onChange}
-          aria-label="basic tabs example"
-        >
+        <Tabs value={tabIndex} onChange={onChange}>
           {tabs.map((tab, index) => (
             <Tab key={index} label={tab.name} />
           ))}
