@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Tabs } from '@components/Tabs';
 import { CodeTab } from '@interfaces/CodeTab';
-import { Box } from '@components/Box';
+import { Box, BoxProps } from '@components/Box';
 import { CodeStrategy } from '@interfaces/CodeStrategy';
 import { Tab } from '@components/Tab';
 import { Code } from '@components/Code';
+import { CodeTabs } from '@components/CodeTabs';
 
 export type ImplementationProps = {
   texts?: { preview?: string; code?: string };
   children?: React.ReactElement;
-  class?: string;
+  sx?: BoxProps['sx'];
 } & (
   | { multipleCode: true; codeTabs: CodeTab[] }
   | ({ multipleCode: false } & CodeStrategy)
@@ -18,6 +19,7 @@ export type ImplementationProps = {
 export const Implementation: React.FC<ImplementationProps> = ({
   texts,
   children,
+  sx,
   ...rest
 }) => {
   const [tabIndex, setTabIndex] = useState<number>(0);
@@ -29,26 +31,17 @@ export const Implementation: React.FC<ImplementationProps> = ({
   const render = () => {
     switch (rest.multipleCode) {
       case true:
-        return (
-          <>
-            {rest.codeTabs.map((tab, index) => (
-              <Code
-                sx={{ ...(tabIndex !== index ? { display: 'none' } : {}) }}
-                key={index}
-                {...tab}
-              />
-            ))}
-          </>
-        );
+        return <CodeTabs tabs={rest.codeTabs} />;
       case false:
-        return <Code {...rest} />;
+        const { multipleCode: _, ...codeProps } = rest;
+        return <Code {...codeProps} />;
       default:
         return <></>;
     }
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '100%', ...sx }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={tabIndex} onChange={onChange}>
           <Tab label={texts?.preview || 'Preview'} />

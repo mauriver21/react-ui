@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Implementation } from '@components/Implementation';
 import { Stack } from '@components/Stack';
+import { Body2 } from '@components/Body2';
 
 const meta: Meta<typeof Implementation> = {
   title: 'Components/Implementation',
@@ -30,7 +31,16 @@ export const Overview: Story = {
               codePath: 'codeSnippets/bash-demo1.sh',
             },
           ]}
-        />
+        >
+          <Body2>Example 1 of implementation component</Body2>
+        </Implementation>
+        <Implementation
+          multipleCode={false}
+          type="path"
+          codePath="codeSnippets/bash-demo1.sh"
+        >
+          <Body2>Example 2 of implementation component</Body2>
+        </Implementation>
       </Stack>
     );
   },
