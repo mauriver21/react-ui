@@ -32,14 +32,14 @@ export const Overview: Story = {
             },
           ]}
         >
-          <Body2>Example 1 of implementation component</Body2>
+          <Body2 p={2}>Example 1 of implementation component</Body2>
         </Implementation>
         <Implementation
           multipleCode={false}
           type="path"
           codePath="codeSnippets/bash-demo1.sh"
         >
-          <Body2>Example 2 of implementation component</Body2>
+          <Body2 p={2}>Example 2 of implementation component</Body2>
         </Implementation>
       </Stack>
     );

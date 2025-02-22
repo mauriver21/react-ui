@@ -4,7 +4,7 @@ import { useCodeContext } from '@components/CodeProvider';
 import { CodeStrategy } from '@interfaces/CodeStrategy';
 import Highlight from 'react-highlight';
 import 'highlight.js/styles/atom-one-dark.css';
-import './index.css';
+import { styles } from './styles';
 
 export type CodeProps = BoxProps & {
   language?: string;
@@ -18,6 +18,7 @@ export const Code: React.FC<CodeProps> = ({
   codeClass,
   mapReplace,
   noBorder,
+  sx,
   ...rest
 }) => {
   const codeContext = useCodeContext();
@@ -55,7 +56,7 @@ export const Code: React.FC<CodeProps> = ({
   }, [initialized]);
 
   return (
-    <Box {...rest}>
+    <Box sx={styles({ sx })} {...rest}>
       <Highlight className={language}>{code}</Highlight>
     </Box>
   );
