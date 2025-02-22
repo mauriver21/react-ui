@@ -1,4 +1,5 @@
-import { debounce, sleep } from '@utils';
+import { debounce } from '@utils/debounce';
+import { sleep } from '@utils/sleep';
 
 describe('debounce', () => {
   it('value must be empty before 200ms and change after 200ms', async () => {

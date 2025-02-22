@@ -1,4 +1,4 @@
-import { sleep } from '@utils';
+import { sleep } from '@utils/sleep';
 
 describe('sleep', () => {
   it('should delay the execution 200ms', async () => {

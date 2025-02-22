@@ -23,7 +23,7 @@
       "@utils/*": ["src/utils/*"],
       "@themes/*": ["src/themes/*"]
     },
-    "types": ["vite/client"]
+    "types": ["vite/client", "@types/jest"]
   },
   "references": [{ "path": "./tsconfig.node.json" }]
 }

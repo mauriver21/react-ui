@@ -1,4 +1,4 @@
-import { get } from '@utils';
+import { get } from '@utils/get';
 
 describe('get', () => {
   it('CASE-1', () => {
@@ -19,7 +19,7 @@ describe('get', () => {
   it('CASE-4', () => {
     const value = get(
       { key1: { key2: { key3: 'Hello world' } } },
-      'key1.key2.key3',
+      'key1.key2.key3'
     );
     expect(value).toBe('Hello world');
   });
