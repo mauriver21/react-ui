@@ -44,7 +44,6 @@ export const Code: React.FC<CodeProps> = ({
 
   useEffect(() => {
     if (initialized) {
-      console.log(1);
       let content = '';
       if (rest.type === 'path') {
         content = codeContext?.getRawCode(rest.codePath) || '';
