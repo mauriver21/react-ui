@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { Box, BoxProps } from '@components/Box';
 import { useCodeContext } from '@components/CodeProvider';
 import { CodeStrategy } from '@interfaces/CodeStrategy';
-import Highlight from 'react-highlight';
-import 'highlight.js/styles/atom-one-dark.css';
 import { styles } from './styles';
 
 export type CodeProps = BoxProps & {
@@ -44,6 +44,7 @@ export const Code: React.FC<CodeProps> = ({
 
   useEffect(() => {
     if (initialized) {
+      console.log(1);
       let content = '';
       if (rest.type === 'path') {
         content = codeContext?.getRawCode(rest.codePath) || '';
@@ -58,7 +59,9 @@ export const Code: React.FC<CodeProps> = ({
 
   return (
     <Box sx={styles({ sx })}>
-      <Highlight className={language}>{code}</Highlight>
+      <SyntaxHighlighter language={language} style={atomOneDark}>
+        {code}
+      </SyntaxHighlighter>
     </Box>
   );
 };

@@ -10,8 +10,11 @@ import { useEffect } from 'react';
 const scratches = import.meta.glob('../src/scratches/**/*.(ts|tsx|sh)', {
   as: 'raw',
 });
+const components = import.meta.glob('../src/components/**/*.(ts|tsx|sh)', {
+  as: 'raw',
+});
 
-const modules = { ...scratches };
+const modules = { ...scratches, ...components };
 const snippets: { [key: string]: string } = {};
 
 export const loadSnippets = async () => {

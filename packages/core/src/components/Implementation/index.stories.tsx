@@ -30,6 +30,12 @@ export const Overview: Story = {
               type: 'path',
               codePath: 'codeSnippets/bash-demo1.sh',
             },
+            {
+              name: 'Demo1.ts',
+              language: 'typescript',
+              type: 'path',
+              codePath: 'ThemeProvider/index.tsx',
+            },
           ]}
         >
           <Body2 p={2}>Example 1 of implementation component</Body2>
