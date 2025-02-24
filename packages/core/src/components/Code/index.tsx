@@ -11,6 +11,7 @@ export type CodeProps = BoxProps & {
   codeClass?: string;
   mapReplace?: { [matchText: string]: string };
   noBorder?: boolean;
+  sx?: BoxProps['sx'];
 } & CodeStrategy;
 
 export const Code: React.FC<CodeProps> = ({
@@ -56,7 +57,7 @@ export const Code: React.FC<CodeProps> = ({
   }, [initialized]);
 
   return (
-    <Box sx={styles({ sx })} {...rest}>
+    <Box sx={styles({ sx })}>
       <Highlight className={language}>{code}</Highlight>
     </Box>
   );
