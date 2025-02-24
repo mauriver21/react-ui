@@ -33,6 +33,7 @@ export * from './H6';
 export * from './I18nProvider';
 export * from './Icon';
 export * from './Image';
+export * from './Implementation';
 export * from './InputLabel';
 export * from './Link';
 export * from './LoadingBackdrop';
