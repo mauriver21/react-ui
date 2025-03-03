@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
+import SyntaxHighlighter, {
+  SyntaxHighlighterProps,
+} from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { Box, BoxProps } from '@components/Box';
 import { useCodeContext } from '@components/CodeProvider';
@@ -8,18 +10,16 @@ import { styles } from './styles';
 
 export type CodeProps = BoxProps & {
   language?: string;
-  codeClass?: string;
   mapReplace?: { [matchText: string]: string };
-  noBorder?: boolean;
   sx?: BoxProps['sx'];
+  syntaxHighlighterProps?: SyntaxHighlighterProps;
 } & CodeStrategy;
 
 export const Code: React.FC<CodeProps> = ({
   language,
-  codeClass,
   mapReplace,
-  noBorder,
   sx,
+  syntaxHighlighterProps,
   ...rest
 }) => {
   const codeContext = useCodeContext();
@@ -56,9 +56,17 @@ export const Code: React.FC<CodeProps> = ({
     }
   }, [initialized]);
 
+  const { customStyle, ...restSyntaxHighlighterProps } =
+    syntaxHighlighterProps || {};
+
   return (
     <Box sx={styles({ sx })}>
-      <SyntaxHighlighter language={language} style={atomOneDark}>
+      <SyntaxHighlighter
+        customStyle={{ display: 'inline-block', width: '100%', ...customStyle }}
+        language={language}
+        style={atomOneDark}
+        {...restSyntaxHighlighterProps}
+      >
         {code}
       </SyntaxHighlighter>
     </Box>
