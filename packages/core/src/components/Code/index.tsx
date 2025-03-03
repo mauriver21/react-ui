@@ -56,12 +56,16 @@ export const Code: React.FC<CodeProps> = ({
     }
   }, [initialized]);
 
+  const { customStyle, ...restSyntaxHighlighterProps } =
+    syntaxHighlighterProps || {};
+
   return (
     <Box sx={styles({ sx })}>
       <SyntaxHighlighter
+        customStyle={{ whiteSpace: 'pre-wrap', ...customStyle }}
         language={language}
         style={atomOneDark}
-        {...syntaxHighlighterProps}
+        {...restSyntaxHighlighterProps}
       >
         {code}
       </SyntaxHighlighter>
