@@ -54,7 +54,7 @@ export const Code: React.FC<CodeProps> = ({
       const code = formatCode(content);
       code && setCode(code);
     }
-  }, [initialized]);
+  }, [initialized, (rest as any)?.codePath, (rest as any)?.code]);
 
   return (
     <Box sx={styles({ sx })}>
