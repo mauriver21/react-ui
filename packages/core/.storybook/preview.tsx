@@ -2,7 +2,6 @@ import type { Preview, StoryContext, StoryFn } from '@storybook/react';
 import { withThemeProvider } from '@hocs/withThemeProvider';
 import { withNotificationsProvider } from '@hocs/withNotificationsProvider';
 import { CodeProvider } from '@components/CodeProvider';
-import { DialogFactoryProvider } from '@components/DialogFactoryProvider';
 import { I18nProvider } from '@components/I18nProvider';
 import { useThemeContext } from '@components/ThemeProvider';
 import { useEffect } from 'react';
@@ -80,7 +79,7 @@ const GlobalProviders: React.FC<{
             },
           }}
         >
-          <DialogFactoryProvider>{children}</DialogFactoryProvider>
+          {children}
         </I18nProvider>
       </CodeProvider>
     );

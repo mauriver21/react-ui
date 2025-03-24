@@ -19,7 +19,6 @@ export * from './Dialog';
 export * from './DialogActions';
 export * from './DialogContent';
 export * from './DialogContentText';
-export * from './DialogFactoryProvider';
 export * from './FormControl';
 export * from './FormControlLabel';
 export * from './FormHelperText';
