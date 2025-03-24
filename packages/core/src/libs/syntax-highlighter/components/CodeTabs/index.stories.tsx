@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { CodeTabs } from '@components/CodeTabs';
+import { CodeTabs } from 'syntax-highlighter/components/CodeTabs';
 import { Stack } from '@components/Stack';
 
 const meta: Meta<typeof CodeTabs> = {

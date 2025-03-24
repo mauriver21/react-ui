@@ -4,7 +4,7 @@ import SyntaxHighlighter, {
 } from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { Box, BoxProps } from '@components/Box';
-import { useCodeContext } from '@components/CodeProvider';
+import { useCodeContext } from 'syntax-highlighter/components/CodeProvider';
 import { CodeStrategy } from '@interfaces/CodeStrategy';
 import { styles } from './styles';
 

@@ -21,7 +21,9 @@
       "@hocs/*": ["src/hocs/*"],
       "@interfaces/*": ["src/interfaces/*"],
       "@utils/*": ["src/utils/*"],
-      "@themes/*": ["src/themes/*"]
+      "@themes/*": ["src/themes/*"],
+      "i18next/*": ["src/libs/i18next/*"],
+      "syntax-highlighter/*": ["src/libs/syntax-highlighter/*"]
     },
     "types": ["vite/client", "@types/jest"]
   },

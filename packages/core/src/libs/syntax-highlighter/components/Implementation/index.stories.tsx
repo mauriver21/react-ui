@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Implementation } from '@components/Implementation';
+import { Implementation } from 'syntax-highlighter/components/Implementation';
 import { Stack } from '@components/Stack';
 import { Body2 } from '@components/Body2';
 

@@ -1,8 +1,8 @@
 import type { Preview, StoryContext, StoryFn } from '@storybook/react';
 import { withThemeProvider } from '@hocs/withThemeProvider';
 import { withNotificationsProvider } from '@hocs/withNotificationsProvider';
-import { CodeProvider } from '@components/CodeProvider';
-import { I18nProvider } from '@components/I18nProvider';
+import { CodeProvider } from 'syntax-highlighter/components/CodeProvider';
+import { I18nProvider } from 'i18next/components/I18nProvider';
 import { useThemeContext } from '@components/ThemeProvider';
 import { useEffect } from 'react';
 

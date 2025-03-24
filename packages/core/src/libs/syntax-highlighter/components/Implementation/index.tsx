@@ -4,8 +4,8 @@ import { CodeTab } from '@interfaces/CodeTab';
 import { Box, BoxProps } from '@components/Box';
 import { CodeStrategy } from '@interfaces/CodeStrategy';
 import { Tab } from '@components/Tab';
-import { Code } from '@components/Code';
-import { CodeTabs } from '@components/CodeTabs';
+import { Code } from 'syntax-highlighter/components/Code';
+import { CodeTabs } from 'syntax-highlighter/components/CodeTabs';
 
 export type ImplementationProps = {
   texts?: { preview?: string; code?: string };

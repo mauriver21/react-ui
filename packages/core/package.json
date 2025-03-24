@@ -12,14 +12,32 @@
     "dist",
     "README.md"
   ],
+  "typesVersions": {
+    "*": {
+      "i18next": [
+        "./dist/libs/i18next/index.d.ts"
+      ],
+      "syntax-highlighter": [
+        "./dist/libs/syntax-highlighter/index.d.ts"
+      ]
+    }
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/es/index.js"
+    },
+    "./i18next": {
+      "types": "./dist/libs/i18next/index.d.ts",
+      "import": "./dist/libs/i18next/es/index.js"
+    },
+    "./syntax-highlighter": {
+      "types": "./dist/libs/syntax-highlighter/index.d.ts",
+      "import": "./dist/libs/syntax-highlighter/es/index.js"
     }
   },
   "scripts": {
-    "build": "tsc && vite build && rm dist/style.css",
+    "build": "node --loader ts-node/esm bundle.ts",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "local-publish-package": "npm publish --registry http://localhost:4873",
     "local-unpublish-package": "npm unpublish @reactjs-ui/core@0.0.0 --registry http://localhost:4873 --force",
@@ -89,6 +107,7 @@
     "storybook": "^7.0.23",
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.11",
     "typescript": "^5.0.2",
     "vite": "^6.2.3",
     "vite-plugin-dts": "^4.5.3",

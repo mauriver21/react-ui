@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Code } from '@components/Code';
+import { Code } from 'syntax-highlighter/components/Code';
 import { Stack } from '@components/Stack';
 import { useEffect, useState } from 'react';
 

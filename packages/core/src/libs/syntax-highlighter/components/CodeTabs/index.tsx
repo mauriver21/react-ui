@@ -1,4 +1,4 @@
-import { Code } from '@components/Code';
+import { Code } from 'syntax-highlighter/components/Code';
 import { Tabs } from '@components/Tabs';
 import { CodeTab } from '@interfaces/CodeTab';
 import { useState } from 'react';
