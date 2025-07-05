@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { AbsoluteBox } from '@components/AbsoluteBox';
 
 const meta: Meta<typeof AbsoluteBox> = {

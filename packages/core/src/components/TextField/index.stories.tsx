@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { TextField } from '@components/TextField';
 import { Stack } from '@components/Stack';
 import { SkeletonLoader } from '@components/SkeletonLoader';

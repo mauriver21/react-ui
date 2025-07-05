@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { I18nProvider, useI18n } from 'i18next/components/I18nProvider';
 import { Stack } from '@components/Stack';
 import { Typography } from '@components/Typography';

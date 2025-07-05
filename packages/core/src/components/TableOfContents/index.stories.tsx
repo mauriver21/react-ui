@@ -3,7 +3,7 @@ import { Box } from '@components/Box';
 import { ContentsArea, ContentsClass } from '@components/ContentsArea';
 import { Stack } from '@components/Stack';
 import { TableOfContents } from '@components/TableOfContents';
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 
 const meta: Meta = {
   title: 'Components/TableOfContents',

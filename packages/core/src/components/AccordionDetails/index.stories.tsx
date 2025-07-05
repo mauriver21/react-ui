@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { AccordionDetails } from '@components/AccordionDetails';
 
 const meta: Meta<typeof AccordionDetails> = {

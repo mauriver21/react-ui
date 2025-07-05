@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { InputLabel } from '@components/InputLabel';
 
 const meta: Meta = {

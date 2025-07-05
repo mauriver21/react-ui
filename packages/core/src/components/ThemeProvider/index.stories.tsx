@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { BoxProps } from '@mui/material';
 import { ThemeProvider } from '@components/ThemeProvider';
 import { Box } from '@components/Box';

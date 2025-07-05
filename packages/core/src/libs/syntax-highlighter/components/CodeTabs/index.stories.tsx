@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { CodeTabs } from 'syntax-highlighter/components/CodeTabs';
 import { Stack } from '@components/Stack';
 

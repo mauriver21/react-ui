@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Stack } from '@components/Stack';
 import { Card } from '@components/Card';
 import { Typography } from '@components/Typography';

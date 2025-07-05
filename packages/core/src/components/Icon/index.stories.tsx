@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Icon } from '@components/Icon';
 import { Stack } from '@components/Stack';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';

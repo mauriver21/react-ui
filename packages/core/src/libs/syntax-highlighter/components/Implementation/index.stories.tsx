@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Implementation } from 'syntax-highlighter/components/Implementation';
 import { Stack } from '@components/Stack';
 import { Body2 } from '@components/Body2';

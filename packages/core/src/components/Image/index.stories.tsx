@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Image, ImageHandle } from '@components/Image';
 import { useEffect, useRef, useState } from 'react';
 import { Stack } from '@components/Stack';

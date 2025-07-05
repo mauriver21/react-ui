@@ -1,4 +1,4 @@
-import type { Preview, StoryContext, StoryFn } from '@storybook/react';
+import type { Preview, StoryContext, StoryFn } from '@storybook/react-vite';
 import { withThemeProvider } from '@hocs/withThemeProvider';
 import { withNotificationsProvider } from '@hocs/withNotificationsProvider';
 import { CodeProvider } from 'syntax-highlighter/components/CodeProvider';
