@@ -1,9 +1,9 @@
 import type { Preview, StoryContext, StoryFn } from '@storybook/react-vite';
-import { withThemeProvider } from '@hocs/withThemeProvider';
-import { withNotificationsProvider } from '@hocs/withNotificationsProvider';
-import { CodeProvider } from 'syntax-highlighter/components/CodeProvider';
-import { I18nProvider } from 'i18next/components/I18nProvider';
-import { useThemeContext } from '@components/ThemeProvider';
+import { withThemeProvider } from '@main/hocs/withThemeProvider';
+import { withNotificationsProvider } from '@main/hocs/withNotificationsProvider';
+import { CodeProvider } from '@syntax-highlighter/components/CodeProvider';
+import { I18nProvider } from '@i18next/components/I18nProvider';
+import { useThemeContext } from '@main/components/ThemeProvider';
 import { useEffect } from 'react';
 
 const scratches = import.meta.glob('../src/scratches/**/*.(ts|tsx|sh)', {

@@ -17,13 +17,13 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "./",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@hocs/*": ["src/hocs/*"],
-      "@interfaces/*": ["src/interfaces/*"],
-      "@utils/*": ["src/utils/*"],
-      "@themes/*": ["src/themes/*"],
-      "i18next/*": ["src/libs/i18next/*"],
-      "syntax-highlighter/*": ["src/libs/syntax-highlighter/*"]
+      "@main/components/*": ["src/main/components/*"],
+      "@main/hocs/*": ["src/main/hocs/*"],
+      "@main/interfaces/*": ["src/main/interfaces/*"],
+      "@main/utils/*": ["src/main/utils/*"],
+      "@main/themes/*": ["src/main/themes/*"],
+      "@i18next/*": ["src/i18next/*"],
+      "@syntax-highlighter/*": ["src/syntax-highlighter/*"]
     },
     "types": ["vite/client", "@types/jest"]
   },
