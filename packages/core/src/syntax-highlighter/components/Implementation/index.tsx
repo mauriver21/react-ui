@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Tabs } from '@components/Tabs';
-import { CodeTab } from '@interfaces/CodeTab';
-import { Box, BoxProps } from '@components/Box';
-import { CodeStrategy } from '@interfaces/CodeStrategy';
-import { Tab } from '@components/Tab';
-import { Code } from 'syntax-highlighter/components/Code';
-import { CodeTabs } from 'syntax-highlighter/components/CodeTabs';
+import { Tabs } from '@main/components/Tabs';
+import { CodeTab } from '@main/interfaces/CodeTab';
+import { Box, BoxProps } from '@main/components/Box';
+import { CodeStrategy } from '@main/interfaces/CodeStrategy';
+import { Tab } from '@main/components/Tab';
+import { Code } from '@syntax-highlighter/components/Code';
+import { CodeTabs } from '@syntax-highlighter/components/CodeTabs';
 
 export type ImplementationProps = {
   texts?: { preview?: string; code?: string };

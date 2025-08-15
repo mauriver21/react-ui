@@ -1,3 +1,3 @@
-import * as themes from '@themes/index';
+import * as themes from '@main/themes/index';
 
 export type ThemeName = keyof typeof themes;

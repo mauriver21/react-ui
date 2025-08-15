@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react-vite';
 import { FormControlLabel } from '@main/components/FormControlLabel';
 
 const meta: Meta = {
-  title: 'Forms/FormControlLabel',
+  title: 'Components/FormControlLabel',
   component: FormControlLabel,
 };
 

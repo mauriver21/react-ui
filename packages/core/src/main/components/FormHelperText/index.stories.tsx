@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react-vite';
 import { FormHelperText } from '@main/components/FormHelperText';
 
 const meta: Meta = {
-  title: 'Forms/FormHelperText',
+  title: 'Components/FormHelperText',
   component: FormHelperText,
 };
 

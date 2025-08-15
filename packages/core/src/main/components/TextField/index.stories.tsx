@@ -4,7 +4,7 @@ import { Stack } from '@main/components/Stack';
 import { SkeletonLoader } from '@main/components/SkeletonLoader';
 
 const meta: Meta<typeof TextField> = {
-  title: 'Forms/TextField',
+  title: 'Components/TextField',
   component: TextField,
 };
 

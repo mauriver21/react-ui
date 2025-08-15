@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
-import { Code } from 'syntax-highlighter/components/Code';
-import { Stack } from '@components/Stack';
+import { Code } from '@syntax-highlighter/components/Code';
+import { Stack } from '@main/components/Stack';
 import { useEffect, useState } from 'react';
 
 const meta: Meta<typeof Code> = {

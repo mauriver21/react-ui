@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
-import { Implementation } from 'syntax-highlighter/components/Implementation';
-import { Stack } from '@components/Stack';
-import { Body2 } from '@components/Body2';
+import { Implementation } from '@syntax-highlighter/components/Implementation';
+import { Stack } from '@main/components/Stack';
+import { Body2 } from '@main/components/Body2';
 
 const meta: Meta<typeof Implementation> = {
   title: 'Components/Implementation',

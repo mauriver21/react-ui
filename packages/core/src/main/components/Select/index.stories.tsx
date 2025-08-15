@@ -4,7 +4,7 @@ import { Stack } from '@main/components/Stack';
 import { SkeletonLoader } from '@main/components/SkeletonLoader';
 
 const meta: Meta<typeof Select> = {
-  title: 'Forms/Select',
+  title: 'Components/Select',
   component: Select,
 };
 

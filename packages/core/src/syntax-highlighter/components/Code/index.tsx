@@ -3,9 +3,9 @@ import SyntaxHighlighter, {
   SyntaxHighlighterProps,
 } from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { Box, BoxProps } from '@components/Box';
-import { useCodeContext } from 'syntax-highlighter/components/CodeProvider';
-import { CodeStrategy } from '@interfaces/CodeStrategy';
+import { Box, BoxProps } from '@main/components/Box';
+import { useCodeContext } from '@syntax-highlighter/components/CodeProvider';
+import { CodeStrategy } from '@main/interfaces/CodeStrategy';
 import { styles } from './styles';
 
 export type CodeProps = BoxProps & {
@@ -56,15 +56,22 @@ export const Code: React.FC<CodeProps> = ({
     }
   }, [initialized, (rest as any)?.codePath, (rest as any)?.code]);
 
+  console.log({
+    language,
+    atomOneDark,
+    code,
+    syntaxHighlighterProps,
+    SyntaxHighlighter,
+  });
+
   return (
     <Box sx={styles({ sx })}>
-      <SyntaxHighlighter
+      {/* <SyntaxHighlighter
         language={language}
         style={atomOneDark}
+        children={code}
         {...syntaxHighlighterProps}
-      >
-        {code}
-      </SyntaxHighlighter>
+      /> */}
     </Box>
   );
 };

@@ -1,9 +1,9 @@
-import { Code } from 'syntax-highlighter/components/Code';
-import { Tabs } from '@components/Tabs';
-import { CodeTab } from '@interfaces/CodeTab';
+import { Code } from '@syntax-highlighter/components/Code';
+import { Tabs } from '@main/components/Tabs';
+import { CodeTab } from '@main/interfaces/CodeTab';
 import { useState } from 'react';
-import { Box } from '@components/Box';
-import { Tab } from '@components/Tab';
+import { Box } from '@main/components/Box';
+import { Tab } from '@main/components/Tab';
 import './index.css';
 
 export interface CodeTabsProps {

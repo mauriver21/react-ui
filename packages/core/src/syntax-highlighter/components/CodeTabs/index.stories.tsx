@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
-import { CodeTabs } from 'syntax-highlighter/components/CodeTabs';
-import { Stack } from '@components/Stack';
+import { CodeTabs } from '@syntax-highlighter/components/CodeTabs';
+import { Stack } from '@main/components/Stack';
 
 const meta: Meta<typeof CodeTabs> = {
   title: 'Components/CodeTabs',

@@ -4,7 +4,7 @@ import { FormHelperText } from '@main/components/FormHelperText';
 import { InputLabel } from '@main/components/InputLabel';
 import { MenuItem } from '@main/components/MenuItem';
 import { withDefaultProps } from '@main/hocs/withDefaultProps';
-import { SelectableOption } from '@interfaces/SelectableOption';
+import { SelectableOption } from '@main/interfaces/SelectableOption';
 import {
   Select as MuiSelect,
   SelectProps as MuiSelectProps,

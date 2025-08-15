@@ -22,6 +22,12 @@
       "@main/interfaces/*": ["src/main/interfaces/*"],
       "@main/utils/*": ["src/main/utils/*"],
       "@main/themes/*": ["src/main/themes/*"],
+      "@forms/components/*": ["src/forms/components/*"],
+      "@forms/hocs/*": ["src/forms/hocs/*"],
+      "@forms/hooks/*": ["src/forms/hooks/*"],
+      "@forms/interfaces/*": ["src/forms/interfaces/*"],
+      "@forms/lib/*": ["src/forms/lib/*"],
+      "@forms/utils/*": ["src/forms/utils/*"],
       "@i18next/*": ["src/i18next/*"],
       "@syntax-highlighter/*": ["src/syntax-highlighter/*"]
     },

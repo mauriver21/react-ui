@@ -5,15 +5,7 @@
   "main": "index.js",
   "scripts": {
     "core:storybook": "pnpm --filter reactjs-ui-core storybook",
-    "core:build": "pnpm --filter reactjs-ui-core build",
-    "core:local-publish-package": "pnpm --filter reactjs-ui-core local-publish-package",
-    "core:local-unpublish-package": "pnpm --filter reactjs-ui-core local-unpublish-package",
-    "form-fields:build": "pnpm --filter form-fields build",
-    "form-fields:local-publish-package": "pnpm --filter form-fields local-publish-package",
-    "form-fields:local-unpublish-package": "pnpm --filter form-fields local-unpublish-package",
-    "local-publish-packages": "pnpm core:build && pnpm core:local-publish-package && pnpm form-fields:build && pnpm form-fields:local-publish-package",
-    "local-unpublish-packages": "pnpm core:local-unpublish-package && pnpm form-fields:local-unpublish-package",
-    "local-republish-packages": "pnpm local-unpublish-packages && pnpm local-publish-packages"
+    "core:build": "pnpm --filter reactjs-ui-core build"
   },
   "keywords": [],
   "author": "Mauricio Rivera",

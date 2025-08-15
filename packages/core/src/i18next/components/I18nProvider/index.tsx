@@ -69,11 +69,7 @@ export const I18nProvider: React.FC<{
       options?.translationsKey || 'localization'
     ];
 
-    if (translations === undefined) {
-      value = get(obj, path);
-    } else {
-      value = get(translations, `${lang}.${path}`);
-    }
+    value = get(translations || obj, `${lang}.${path}`);
 
     if (value === '' || value === undefined) value = get(obj, path);
     if (typeof value !== 'string') return '';

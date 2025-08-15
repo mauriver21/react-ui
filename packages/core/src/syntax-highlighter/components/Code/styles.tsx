@@ -1,4 +1,4 @@
-import { CodeProps } from 'syntax-highlighter/components/Code';
+import { CodeProps } from '@syntax-highlighter/components/Code';
 
 export const styles = ({ sx }: Partial<CodeProps>) => ({
   ...sx,
