@@ -56,22 +56,14 @@ export const Code: React.FC<CodeProps> = ({
     }
   }, [initialized, (rest as any)?.codePath, (rest as any)?.code]);
 
-  console.log({
-    language,
-    atomOneDark,
-    code,
-    syntaxHighlighterProps,
-    SyntaxHighlighter,
-  });
-
   return (
     <Box sx={styles({ sx })}>
-      {/* <SyntaxHighlighter
+      <SyntaxHighlighter
         language={language}
         style={atomOneDark}
         children={code}
         {...syntaxHighlighterProps}
-      /> */}
+      />
     </Box>
   );
 };
