@@ -52,11 +52,11 @@ jobs:
           GIT_COMMITTER_NAME: github-actions
           GIT_COMMITTER_EMAIL: actions@github.com
 
-      # - name: Publish to NPM
-      #   if: github.ref_name == 'master' && github.event_name == 'push'
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      #   run: pnpm core:npm-publish
+      - name: Publish to NPM
+        if: github.ref_name == 'master' && github.event_name == 'push'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: pnpm core:npm-publish
 
       - name: Commit bumped version
         if: github.ref_name == 'master' && github.event_name == 'push'
