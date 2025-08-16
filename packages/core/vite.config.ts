@@ -25,14 +25,6 @@ const REWRITE_MAIN_PLUGIN: PluginOption = {
   },
 };
 
-// centralize entries instead of multiple vite.build calls
-const ENTRY_POINTS: Record<string, string> = {
-  'i18next/index': 'src/i18next/index.ts',
-  'syntax-highlighter/index': 'src/syntax-highlighter/index.ts',
-  'forms/index': 'src/forms/index.ts',
-  'main/index': 'src/main/index.ts',
-};
-
 export default defineConfig(({ command }) => {
   return {
     plugins: [
@@ -51,17 +43,17 @@ export default defineConfig(({ command }) => {
       }),
       ...(command === 'build' ? [REWRITE_MAIN_PLUGIN] : []),
     ],
-    css: {
-      // ensures each entry/module has its own CSS output
-      devSourcemap: true,
-    },
     build: {
       minify: false,
       lib: {
-        entry: ENTRY_POINTS,
+        entry: [
+          'src/forms/index.ts',
+          'src/i18next/index.ts',
+          'src/main/index.ts',
+          'src/syntax-highlighter/index.ts',
+        ],
         formats: ['es'],
       } as LibraryOptions,
-      cssCodeSplit: true,
       rollupOptions: {
         external: (id) => {
           if (
@@ -73,7 +65,9 @@ export default defineConfig(({ command }) => {
         },
         output: {
           preserveModules: true,
+          preserveModulesRoot: 'src',
           entryFileNames: (chunk) => `${chunk.name}.js`,
+          assetFileNames: 'styles.css',
         },
       },
       emptyOutDir: true,

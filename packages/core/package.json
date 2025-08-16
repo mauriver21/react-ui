@@ -29,8 +29,7 @@
       "types": "./dist/syntax-highlighter/index.d.ts",
       "import": "./dist/syntax-highlighter/es/index.js"
     },
-    "./styles.css": "./dist/main/styles.css",
-    "./syntax-highlighter/styles.css": "./dist/syntax-highlighter/styles.css",
+    "./styles.css": "./dist/styles.css",
     "./types.d": "./dist/types.d/index.d.ts"
   },
   "scripts": {

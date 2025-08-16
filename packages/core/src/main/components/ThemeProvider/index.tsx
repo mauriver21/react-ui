@@ -7,10 +7,8 @@ import {
 } from '@mui/material';
 import { ThemeProvider as MuiThemeProvider } from '@mui/material';
 import { ThemeName } from '@main/interfaces/ThemeName';
+import { Style } from '@main/components/Style';
 import * as themes from '@main/themes/index';
-import { v4 as uuid } from 'uuid';
-
-const THEME_ID = uuid();
 
 export type ComponentName = keyof Theme['customComponents'];
 export interface ThemeProviderProps
@@ -42,20 +40,15 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   ...rest
 }) => {
   const [theme, setTheme] = useState(createTheme(themes[themeName]));
+  const [themeCss, setThemeCss] = useState('');
 
   const loadStyles = async (themeName: ThemeName) => {
-    const cssPath = `../../themes/${themeName.replace(
-      /(Light|Dark)/,
-      ''
-    )}/index.css`;
-    const url = new URL(cssPath, import.meta.url).href;
-    const link =
-      (document.getElementById(THEME_ID) as HTMLLinkElement) ||
-      document.createElement('link');
-    link.id = THEME_ID;
-    link.rel = 'stylesheet';
-    link.href = url;
-    document.head.appendChild(link);
+    const css = (
+      await import(
+        `../../themes/${themeName.replace(/(Light|Dark)/, '')}/index.css`
+      )
+    ).default;
+    setThemeCss(css);
   };
 
   const changeTheme = (themeName: ThemeName) => {
@@ -82,6 +75,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
       }}
     >
       <MuiThemeProvider {...rest} theme={theme}>
+        <Style id="theme-style" css={themeCss} />
         <CssBaseline />
         {children}
       </MuiThemeProvider>
