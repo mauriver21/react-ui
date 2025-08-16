@@ -1,13 +1,9 @@
 {
-  "name": "reactjs-ui",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "core:storybook": "pnpm --filter reactjs-ui storybook",
-    "core:build": "pnpm --filter reactjs-ui build",
-    "core:bump-patch-version": "pnpm --filter reactjs-ui bump-patch-version",
-    "core:npm-publish": "pnpm --filter reactjs-ui npm-publish"
+    "core:storybook": "pnpm --filter reactjs-shared-ui storybook",
+    "core:build": "pnpm --filter reactjs-shared-ui build",
+    "core:bump-patch-version": "pnpm --filter reactjs-shared-ui bump-patch-version",
+    "core:npm-publish": "pnpm --filter reactjs-shared-ui npm-publish"
   },
   "keywords": [],
   "author": "Mauricio Rivera",
