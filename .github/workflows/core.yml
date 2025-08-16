@@ -48,11 +48,13 @@ jobs:
           GIT_COMMITTER_NAME: github-actions
           GIT_COMMITTER_EMAIL: actions@github.com
 
+      - name: Authenticate with NPM
+        if: github.ref_name == 'master' && github.event_name == 'push'
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
       - name: Publish
         if: github.ref_name == 'master' && github.event_name == 'push'
         run: pnpm core:npm-publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Commit bumped version
         if: github.ref_name == 'master' && github.event_name == 'push'
