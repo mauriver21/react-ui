@@ -1,6 +1,10 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { CssBaseline, Theme, createTheme } from '@mui/material';
-import { ThemeProviderProps as MuiThemeProviderProps } from '@mui/material/styles/ThemeProvider';
+import {
+  CssBaseline,
+  Theme,
+  createTheme,
+  ThemeProviderProps as MuiThemeProviderProps,
+} from '@mui/material';
 import { ThemeProvider as MuiThemeProvider } from '@mui/material';
 import { ThemeName } from '@main/interfaces/ThemeName';
 import { Style } from '@main/components/Style';

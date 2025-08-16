@@ -2,15 +2,15 @@ import { Field } from '@forms/lib/Field';
 import { FieldProps } from '@forms/interfaces/FieldProps';
 import { FormHelperText } from '@main/components/FormHelperText';
 import {
-  TextField as MuiTextField,
-  TextFieldProps as MuiTextFieldProps,
-} from '@main/components/TextField';
+  BaseTextField as BaseMuiTextField,
+  BaseTextFieldProps as BaseMuiTextFieldProps,
+} from '@main/components/BaseTextField';
 import { Box } from '@main/components/Box';
 import { withSkeleton } from '@main/hocs/withSkeleton';
 
-const BaseTextField = withSkeleton(MuiTextField, { fitContent: true });
+const BaseTextField = withSkeleton(BaseMuiTextField, { fitContent: true });
 
-export type TextFieldProps = MuiTextFieldProps & FieldProps & {};
+export type TextFieldProps = BaseMuiTextFieldProps & FieldProps & {};
 
 export const TextField: React.FC<TextFieldProps> = ({
   fullWidth = true,

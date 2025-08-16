@@ -3,10 +3,7 @@ import { FieldProps } from '@forms/interfaces/FieldProps';
 import { Box } from '@main/components/Box';
 import { FormControlLabel } from '@main/components/FormControlLabel';
 import { FormHelperText } from '@main/components/FormHelperText';
-import {
-  Checkbox as BaseCheckbox,
-  CheckboxProps as BaseCheckboxProps,
-} from '@main/components/Checkbox';
+import { BaseCheckbox, BaseCheckboxProps } from '@main/components/BaseCheckbox';
 
 export type CheckboxProps = BaseCheckboxProps &
   FieldProps & {

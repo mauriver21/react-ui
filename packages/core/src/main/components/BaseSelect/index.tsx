@@ -3,8 +3,8 @@ import {
   SelectProps as MuiSelectProps,
 } from '@mui/material';
 
-export type SelectProps = MuiSelectProps;
+export type BaseSelectProps = MuiSelectProps;
 
-export const Select: React.FC<SelectProps> = (props) => (
+export const BaseSelect: React.FC<BaseSelectProps> = (props) => (
   <MuiSelect {...props} />
 );

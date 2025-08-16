@@ -5,40 +5,37 @@
   "author": {
     "name": "Mauricio Rivera"
   },
-  "source": "./src/index.ts",
-  "types": "./dist/index.d.ts",
-  "main": "./dist/es/index.js",
+  "source": "./src",
+  "types": "./dist/main/index.d.ts",
+  "main": "./dist/main/index.js",
   "files": [
     "dist",
     "README.md"
   ],
-  "typesVersions": {
-    "*": {
-      "i18next": [
-        "./dist/libs/i18next/index.d.ts"
-      ],
-      "syntax-highlighter": [
-        "./dist/libs/syntax-highlighter/index.d.ts"
-      ]
-    }
-  },
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/es/index.js"
+      "types": "./dist/main/index.d.ts",
+      "import": "./dist/main/index.js"
+    },
+    "./forms": {
+      "types": "./dist/forms/index.d.ts",
+      "import": "./dist/forms/index.js"
     },
     "./i18next": {
-      "types": "./dist/libs/i18next/index.d.ts",
-      "import": "./dist/libs/i18next/es/index.js"
+      "types": "./dist/i18next/index.d.ts",
+      "import": "./dist/i18next/es/index.js"
     },
     "./syntax-highlighter": {
-      "types": "./dist/libs/syntax-highlighter/index.d.ts",
-      "import": "./dist/libs/syntax-highlighter/es/index.js"
-    }
+      "types": "./dist/syntax-highlighter/index.d.ts",
+      "import": "./dist/syntax-highlighter/es/index.js"
+    },
+    "./styles.css": "./dist/main/styles.css",
+    "./syntax-highlighter/styles.css": "./dist/syntax-highlighter/styles.css",
+    "./types.d": "./dist/types.d/index.d.ts"
   },
   "scripts": {
     "dev": "vite",
-    "build": "node --loader ts-node/esm bundle.ts",
+    "build": "NODE_OPTIONS='--max-old-space-size=8192' node --loader ts-node/esm bundle.ts",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "local-publish-package": "npm publish --registry http://localhost:4873",
     "local-unpublish-package": "npm unpublish @reactjs-ui/core@0.0.0 --registry http://localhost:4873 --force",
@@ -114,7 +111,7 @@
     "ts-node": "^10.9.1",
     "tsc-alias": "^1.8.11",
     "typescript": "^5.0.2",
-    "vite": "^6.2.3",
+    "vite": "^7.1.2",
     "vite-plugin-checker": "^0.10.2",
     "vite-plugin-dts": "^4.5.3",
     "vite-plugin-static-copy": "^2.3.0",

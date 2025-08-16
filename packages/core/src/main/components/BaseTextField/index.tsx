@@ -3,8 +3,8 @@ import {
   TextFieldProps as MuiTextFieldProps,
 } from '@mui/material';
 
-export type TextFieldProps = MuiTextFieldProps;
+export type BaseTextFieldProps = MuiTextFieldProps;
 
-export const TextField: React.FC<TextFieldProps> = (props) => (
+export const BaseTextField: React.FC<BaseTextFieldProps> = (props) => (
   <BaseMuiTextField {...props} />
 );

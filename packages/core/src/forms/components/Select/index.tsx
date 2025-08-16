@@ -1,18 +1,18 @@
 import { FieldProps } from '@forms/interfaces/FieldProps';
 import {
-  Select as MuiSelect,
-  SelectProps as MuiSelectProps,
-} from '@main/components/Select';
+  BaseSelect as MuiBaseSelect,
+  BaseSelectProps,
+} from '@main/components/BaseSelect';
 import { Field } from '@forms/lib/Field';
 import { withDefaultProps } from '@main/hocs/withDefaultProps';
 import { Box, BoxProps } from '@main/components/Box';
 import { FormControl } from '@main/components/FormControl';
 import { InputLabel } from '@main/components/InputLabel';
-import { SelectableOption } from '@main/interfaces/SelectableOption';
+import { SelectableOption } from '@forms/interfaces/SelectableOption';
 import { MenuItem } from '@main/components/MenuItem';
 import { FormHelperText } from '@main/components/FormHelperText';
 
-export type SelectProps = MuiSelectProps & {
+export type SelectProps = BaseSelectProps & {
   rootSx?: BoxProps['sx'];
   defaultRootSx?: BoxProps['sx'];
   options?: Array<SelectableOption>;
@@ -44,13 +44,13 @@ const BaseSelect = withDefaultProps(
               {rest.label}
             </InputLabel>
           )}
-          <MuiSelect fullWidth={fullWidth} error={error} {...rest}>
+          <MuiBaseSelect fullWidth={fullWidth} error={error} {...rest}>
             {options.map((option, index) => (
               <MenuItem value={option.value} key={index}>
                 {option.label}
               </MenuItem>
             ))}
-          </MuiSelect>
+          </MuiBaseSelect>
         </FormControl>
         {helperText && (
           <FormHelperText disabled={rest.disabled}>{helperText}</FormHelperText>

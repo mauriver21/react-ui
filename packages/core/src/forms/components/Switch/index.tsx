@@ -1,7 +1,4 @@
-import {
-  Switch as BaseSwitch,
-  SwitchProps as BaseSwitchProps,
-} from '@main/components/Switch';
+import { BaseSwitch, BaseSwitchProps } from '@main/components/BaseSwitch';
 import { Field } from '@forms/lib/Field';
 import { FieldProps } from '@forms/interfaces/FieldProps';
 import { Box } from '@main/components/Box';

@@ -3,8 +3,8 @@ import {
   SwitchProps as MuiSwitchProps,
 } from '@mui/material';
 
-export type SwitchProps = MuiSwitchProps & {};
+export type BaseSwitchProps = MuiSwitchProps & {};
 
-export const Switch: React.FC<SwitchProps> = (props) => (
+export const BaseSwitch: React.FC<BaseSwitchProps> = (props) => (
   <MuiSwitch {...props} />
 );
