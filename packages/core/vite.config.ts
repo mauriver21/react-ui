@@ -17,7 +17,10 @@ const externalDeps = [
 const REWRITE_MAIN_PLUGIN: PluginOption = {
   name: 'replace-main-imports',
   enforce: 'post',
-  transform(code) {
+  transform(code, id) {
+    if (id.includes('src/main')) {
+      return code;
+    }
     return code.replace(/@main\/[^'"]+/g, MAIN_LIBRARY_NAME);
   },
 };
@@ -30,49 +33,50 @@ const ENTRY_POINTS: Record<string, string> = {
   'main/index': 'src/main/index.ts',
 };
 
-export default defineConfig({
-  plugins: [
-    react(),
-    tsconfigPaths(),
-    dts({
-      include: [
-        'src/forms',
-        'src/i18next',
-        'src/main',
-        'src/syntax-highlighter',
-      ],
-      exclude: ['**/*.stories.ts', '**/*.stories.tsx'],
-      outDir: 'dist', // keeps folder structure mirroring src
-      entryRoot: 'src', // preserves per-package dirs
-    }),
-    REWRITE_MAIN_PLUGIN,
-  ],
-  css: {
-    // ensures each entry/module has its own CSS output
-    devSourcemap: true,
-  },
-  build: {
-    minify: false,
-    lib: {
-      // ❗ key part: multiple entries in one go
-      entry: ENTRY_POINTS,
-      formats: ['es'],
-    } as LibraryOptions,
-    cssCodeSplit: true,
-    rollupOptions: {
-      external: (id) => {
-        if (
-          externalDeps.some((dep) => id === dep || id.startsWith(`${dep}/`))
-        ) {
-          return true;
-        }
-        return false;
-      },
-      output: {
-        preserveModules: true,
-        entryFileNames: (chunk) => `${chunk.name}.js`,
-      },
+export default defineConfig(({ command }) => {
+  return {
+    plugins: [
+      react(),
+      tsconfigPaths(),
+      dts({
+        include: [
+          'src/forms',
+          'src/i18next',
+          'src/main',
+          'src/syntax-highlighter',
+        ],
+        exclude: ['**/*.stories.ts', '**/*.stories.tsx'],
+        outDir: 'dist', // keeps folder structure mirroring src
+        entryRoot: 'src', // preserves per-package dirs
+      }),
+      ...(command === 'build' ? [REWRITE_MAIN_PLUGIN] : []),
+    ],
+    css: {
+      // ensures each entry/module has its own CSS output
+      devSourcemap: true,
     },
-    emptyOutDir: true,
-  },
+    build: {
+      minify: false,
+      lib: {
+        entry: ENTRY_POINTS,
+        formats: ['es'],
+      } as LibraryOptions,
+      cssCodeSplit: true,
+      rollupOptions: {
+        external: (id) => {
+          if (
+            externalDeps.some((dep) => id === dep || id.startsWith(`${dep}/`))
+          ) {
+            return true;
+          }
+          return false;
+        },
+        output: {
+          preserveModules: true,
+          entryFileNames: (chunk) => `${chunk.name}.js`,
+        },
+      },
+      emptyOutDir: true,
+    },
+  };
 });
