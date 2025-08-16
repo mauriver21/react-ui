@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
 import { expect } from '@storybook/jest';
-import { Button, Stack } from 'reactjs-ui-core';
+import { Button } from '@main/components/Button';
+import { Stack } from '@main/components/Stack';
 import { fireEvent, userEvent, within } from '@storybook/testing-library';
 import { useForm } from '@forms/hooks/useForm';
 import { schema } from '@forms/utils/schema';
