@@ -50,7 +50,7 @@ jobs:
 
       - name: Publish
         if: github.ref_name == 'master' && github.event_name == 'push'
-        run: npm publish
+        run: pnpm core:npm-publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
