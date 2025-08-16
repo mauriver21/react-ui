@@ -29,7 +29,7 @@ export interface ContentsAreaProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, 'ref'> {}
 
 const ContentsAreaContext = createContext<{
-  contentRef: RefObject<HTMLDivElement>;
+  contentRef: RefObject<HTMLDivElement | null>;
   treeItems: TreeItem[];
   activeId: string;
   highlightItem: (id: string) => void;

@@ -1,3 +1,4 @@
+import { BoxProps } from '@mui/material';
 import { SelectProps } from '@components/Select';
 import { TextFieldProps } from '@components/TextField';
 import { TimePickerProps } from '@components/TimePickerProps';
@@ -21,7 +22,10 @@ declare module '@mui/material/styles' {
         defaultProps?: Partial<TextFieldProps>;
       };
       Select?: {
-        defaultProps?: Partial<SelectProps>;
+        defaultProps?: Partial<{
+          rootSx: BoxProps['sx'];
+          defaultRootSx: BoxProps['sx'];
+        }>;
       };
       TimePicker?: {
         defaultProps?: Partial<TimePickerProps>;

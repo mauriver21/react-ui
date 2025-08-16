@@ -1,4 +1,4 @@
-import { CodeStrategy } from '@interfaces/CodeStrategy';
+import { CodeStrategy } from '@main/interfaces/CodeStrategy';
 
 export type CodeTab = {
   name: string;

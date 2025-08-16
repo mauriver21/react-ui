@@ -1,4 +1,4 @@
-import { CommonEventHandler } from '@forms/interfaces';
+import { CommonEventHandler } from '@forms/interfaces/CommonEventHandler';
 
 export type Field = {
   props: {
