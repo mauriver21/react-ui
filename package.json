@@ -6,7 +6,8 @@
   "scripts": {
     "core:storybook": "pnpm --filter reactjs-ui storybook",
     "core:build": "pnpm --filter reactjs-ui build",
-    "core:bump-patch-version": "pnpm --filter reactjs-ui bump-patch-version"
+    "core:bump-patch-version": "pnpm --filter reactjs-ui bump-patch-version",
+    "core:npm-publish": "pnpm --filter reactjs-ui npm-publish"
   },
   "keywords": [],
   "author": "Mauricio Rivera",
