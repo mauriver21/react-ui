@@ -38,7 +38,7 @@ export const TextField: React.FC<TextFieldProps> = ({
             </FormHelperText>
           )}
           {helpers.errorMessage && (
-            <FormHelperText error={rest.error}>
+            <FormHelperText error={helpers.error}>
               {helpers.errorMessage}
             </FormHelperText>
           )}

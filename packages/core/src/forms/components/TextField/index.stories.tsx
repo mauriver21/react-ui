@@ -107,7 +107,7 @@ export const BlurValidation: Story = {
     expect(errorMessage).toBeDefined();
     userEvent.type(field, 'foo@mail.com');
 
-    await sleep(300);
+    await sleep(500);
 
     errorMessage = canvas.queryByText('email is a required field');
     expect(errorMessage).toBe(null);

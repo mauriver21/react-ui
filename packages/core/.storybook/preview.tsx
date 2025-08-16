@@ -34,7 +34,7 @@ export const loadSnippets = async () => {
 const globalDecorator = (Story: StoryFn, context: StoryContext) => {
   return (
     <GlobalProviders context={context}>
-      <Story />
+      {Story(context.args, context)}
     </GlobalProviders>
   );
 };
@@ -88,7 +88,6 @@ const GlobalProviders: React.FC<{
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
         color: /(background|color)$/i,

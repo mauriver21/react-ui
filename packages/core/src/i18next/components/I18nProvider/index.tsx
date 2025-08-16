@@ -17,7 +17,7 @@ const I18nContext = createContext<{
       translationsKey?: string;
     }
   ) => string;
-}>({} as any);
+}>({ t: () => {}, tObj: () => {} } as any);
 
 export const useI18n = () => useContext(I18nContext);
 export const I18nProvider: React.FC<{
