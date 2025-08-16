@@ -50,7 +50,7 @@ jobs:
 
       - name: Authenticate with NPM
         if: github.ref_name == 'master' && github.event_name == 'push'
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
 
       - name: Publish
         if: github.ref_name == 'master' && github.event_name == 'push'
