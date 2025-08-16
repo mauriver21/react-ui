@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "core:storybook": "pnpm --filter reactjs-ui-core storybook",
-    "core:build": "pnpm --filter reactjs-ui-core build"
+    "core:storybook": "pnpm --filter reactjs-ui storybook",
+    "core:build": "pnpm --filter reactjs-ui build",
+    "core:bump-patch-version": "pnpm --filter reactjs-ui bump-patch-version"
   },
   "keywords": [],
   "author": "Mauricio Rivera",
