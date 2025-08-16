@@ -1,12 +1,12 @@
 import {
-  Box,
   Switch as BaseSwitch,
   SwitchProps as BaseSwitchProps,
-  FormControlLabel,
-  FormHelperText,
-} from 'reactjs-ui-core';
+} from '@main/components/Switch';
 import { Field } from '@forms/lib/Field';
 import { FieldProps } from '@forms/interfaces/FieldProps';
+import { Box } from '@main/components/Box';
+import { FormControlLabel } from '@main/components/FormControlLabel';
+import { FormHelperText } from '@main/components/FormHelperText';
 
 export type SwitchProps = BaseSwitchProps &
   FieldProps & {
