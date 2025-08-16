@@ -1,14 +1,11 @@
 import { Checkbox } from '@forms/components/Checkbox';
-import {
-  InputLabel,
-  FormHelperText,
-  Stack,
-  StackProps,
-  Box,
-} from 'reactjs-ui-core';
 import { Field } from '@forms/lib/Field';
 import { FieldProps } from '@forms/interfaces/FieldProps';
 import { SelectableOption } from '@forms/interfaces/SelectableOption';
+import { Stack, StackProps } from '@main/components/Stack';
+import { Box } from '@main/components/Box';
+import { InputLabel } from '@main/components/InputLabel';
+import { FormHelperText } from '@main/components/FormHelperText';
 
 export type CheckboxGroupProps = FieldProps & {
   direction?: StackProps['direction'];

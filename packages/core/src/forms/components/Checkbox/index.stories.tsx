@@ -1,12 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
 import { fireEvent, userEvent, within } from '@storybook/testing-library';
-import { Button, Stack } from 'reactjs-ui-core';
 import { Checkbox } from '@forms/components/Checkbox';
 import { sleep } from '@main/utils/sleep';
 import { expect } from '@storybook/jest';
 import { Schema } from '@forms/interfaces/Schema';
 import { schema } from '@forms/utils/schema';
 import { useForm } from '@forms/hooks/useForm';
+import { Stack } from '@main/components/Stack';
+import { Button } from '@main/components/Button';
 
 const meta: Meta = {
   title: 'Forms/Checkbox',

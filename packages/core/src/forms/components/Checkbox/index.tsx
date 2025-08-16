@@ -1,12 +1,12 @@
-import {
-  Box,
-  Checkbox as BaseCheckbox,
-  CheckboxProps as BaseCheckboxProps,
-  FormControlLabel,
-  FormHelperText,
-} from 'reactjs-ui-core';
 import { Field } from '@forms/lib/Field';
 import { FieldProps } from '@forms/interfaces/FieldProps';
+import { Box } from '@main/components/Box';
+import { FormControlLabel } from '@main/components/FormControlLabel';
+import { FormHelperText } from '@main/components/FormHelperText';
+import {
+  Checkbox as BaseCheckbox,
+  CheckboxProps as BaseCheckboxProps,
+} from '@main/components/Checkbox';
 
 export type CheckboxProps = BaseCheckboxProps &
   FieldProps & {

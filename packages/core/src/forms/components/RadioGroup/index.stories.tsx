@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react-vite';
-import { Button, Stack } from 'reactjs-ui-core';
 import { useForm } from '@forms/hooks/useForm';
 import { schema } from '@forms/utils/schema';
 import { Schema } from '@forms/interfaces/Schema';
@@ -7,6 +6,8 @@ import { RadioGroup } from '@forms/components/RadioGroup';
 import { sleep } from '@main/utils/sleep';
 import { fireEvent, userEvent, within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
+import { Stack } from '@main/components/Stack';
+import { Button } from '@main/components/Button';
 
 const meta: Meta = {
   title: 'Forms/RadioGroup',
