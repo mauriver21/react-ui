@@ -23,11 +23,11 @@
     },
     "./i18next": {
       "types": "./dist/i18next/index.d.ts",
-      "import": "./dist/i18next/es/index.js"
+      "import": "./dist/i18next/index.js"
     },
     "./syntax-highlighter": {
       "types": "./dist/syntax-highlighter/index.d.ts",
-      "import": "./dist/syntax-highlighter/es/index.js"
+      "import": "./dist/syntax-highlighter/index.js"
     },
     "./styles.css": "./dist/styles.css",
     "./types.d": "./dist/types.d/index.d.ts"
