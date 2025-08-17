@@ -14,6 +14,13 @@ const externalDeps = [
   MAIN_LIBRARY_NAME,
 ];
 
+const ENTRY_POINTS: Record<string, string> = {
+  'i18next/index': 'src/i18next/index.ts',
+  'syntax-highlighter/index': 'src/syntax-highlighter/index.ts',
+  'forms/index': 'src/forms/index.ts',
+  'main/index': 'src/main/index.ts',
+};
+
 const REWRITE_MAIN_PLUGIN: PluginOption = {
   name: 'replace-main-imports',
   enforce: 'post',
@@ -46,12 +53,7 @@ export default defineConfig(({ command }) => {
     build: {
       minify: false,
       lib: {
-        entry: [
-          'src/forms/index.ts',
-          'src/i18next/index.ts',
-          'src/main/index.ts',
-          'src/syntax-highlighter/index.ts',
-        ],
+        entry: ENTRY_POINTS,
         formats: ['es'],
       } as LibraryOptions,
       rollupOptions: {
@@ -64,9 +66,6 @@ export default defineConfig(({ command }) => {
           return false;
         },
         output: {
-          preserveModules: true,
-          preserveModulesRoot: 'src',
-          entryFileNames: (chunk) => `${chunk.name}.js`,
           assetFileNames: 'styles.css',
         },
       },
